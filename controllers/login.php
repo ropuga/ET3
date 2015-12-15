@@ -1,6 +1,6 @@
 <?php
   // Controlador de login hecho por FVieira.
-  require_once '../views/engine.php'; // se carga la clase TemplateEngine
+  require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
   session_start(); // se inicia el manejo de sesiones
   $db = DBManager::getInstance();
