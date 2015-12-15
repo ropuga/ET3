@@ -1,9 +1,10 @@
 <?php
-require '../views/engine.php';
-
-$view = new Template();
-$view->navbar = null;
-$view->title = "Login";
-$view->content = $view->render('login_v.php');
-echo $view->render('main.php');
-?>
+  require 'render_helper.php';
+  $renderMain = new Template();
+  $renderMain->title = "Login";
+  $renderMain->navbar = null;
+  $renderlogin = new Template();
+  $renderlogin->status = "usurario invalido";
+  $renderMain->content = $renderlogin->render('login_v.php');
+  echo $renderMain->renderMain();
+ ?>

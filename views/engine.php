@@ -1,6 +1,11 @@
 <?php
   class Template {
     private $vars = array();
+
+    public function renderMain(){
+      return $this->render('main.php');
+    }
+
     public function __get($name) { return $this->vars[$name]; }
     public function __set($name, $value) {
       if($name == 'view_template_file') {
