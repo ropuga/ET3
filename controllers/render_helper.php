@@ -1,6 +1,7 @@
 <?php
 require_once '../views/engine.php';
-
+//funciones que cargan y renderizan automaticamente una plantilla en concreto. Solo es util si la plantilla en si no tiene variables
+//hecho por FVieira
 function renderfileNoNavbar($file){
   $view = new Template();
   $view->navbar = null;

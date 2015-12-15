@@ -1,5 +1,5 @@
 <?php
-  class Template {
+  class TemplateEngine {
     private $vars = array();
 
     public function renderMain(){
