@@ -57,11 +57,18 @@ class Notificacion{
    $this->user_name = $value;
  }
 
- /* check the existance of a value */
- public function checkExistence($key,$value){ 
-   $query='select '.$key.'from Notificacion where '.$key.'='.$value;
-   $result = $this->driver->exec();
-   return $result->num_rows == 0;
+
+/* factory method, takes an array of mysqli::array_fetch and returns a array of Notificacion */
+ public function factory($arrayfetch){
+   $arraytoret = Array();
+   if($arrayfetch){
+     foreach($arrayfetch as $fetch){
+       $newObject = new Notificacion($this->driver);
+       $newObject->fill($fetch);
+       array_push($arraytoret,$newObject);
+     }
+   }
+ return $arraytoret;
  }
 
  /* return an array containing all Notificacion that key = value */
@@ -71,14 +78,7 @@ class Notificacion{
      from Notificacion
      where '.$key.'='.$value;
    $results = $this->driver->exec($query);
-   foreach($results as $result) {
-     if($result){
-       $newObject = new Notificacion($this->driver);
-         $newObject->fill($result);
-       array_push($arraytoret,$newObject);
-     }
-   }
-   return $arraytoret;
+   return $this->factory($results);
 }
 
 /* returns an array of Notificacion containing all rows from db */
@@ -87,14 +87,7 @@ class Notificacion{
    $query='select *
      from Notificacion';
    $results = $this->driver->exec($query);
-   foreach($results as $result) {
-     if($result){
-       $newObject = new Notificacion($this->driver);
-         $newObject->fill($result);
-       array_push($arraytoret,$newObject);
-     }
-   }
-   return $arraytoret;
+   return $this->factory($results);
 }
 
 /* deletes from db */

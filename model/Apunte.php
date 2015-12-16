@@ -66,11 +66,18 @@ class Apunte{
    $this->file_name = $value;
  }
 
- /* check the existance of a value */
- public function checkExistence($key,$value){ 
-   $query='select '.$key.'from Apunte where '.$key.'='.$value;
-   $result = $this->driver->exec();
-   return $result->num_rows == 0;
+
+/* factory method, takes an array of mysqli::array_fetch and returns a array of Apunte */
+ public function factory($arrayfetch){
+   $arraytoret = Array();
+   if($arrayfetch){
+     foreach($arrayfetch as $fetch){
+       $newObject = new Apunte($this->driver);
+       $newObject->fill($fetch);
+       array_push($arraytoret,$newObject);
+     }
+   }
+ return $arraytoret;
  }
 
  /* return an array containing all Apunte that key = value */
@@ -80,14 +87,7 @@ class Apunte{
      from Apunte
      where '.$key.'='.$value;
    $results = $this->driver->exec($query);
-   foreach($results as $result) {
-     if($result){
-       $newObject = new Apunte($this->driver);
-         $newObject->fill($result);
-       array_push($arraytoret,$newObject);
-     }
-   }
-   return $arraytoret;
+   return $this->factory($results);
 }
 
 /* returns an array of Apunte containing all rows from db */
@@ -96,14 +96,7 @@ class Apunte{
    $query='select *
      from Apunte';
    $results = $this->driver->exec($query);
-   foreach($results as $result) {
-     if($result){
-       $newObject = new Apunte($this->driver);
-         $newObject->fill($result);
-       array_push($arraytoret,$newObject);
-     }
-   }
-   return $arraytoret;
+   return $this->factory($results);
 }
 
 /* deletes from db */
