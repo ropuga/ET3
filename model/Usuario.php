@@ -1,6 +1,6 @@
 <?php
 /* the ORM and activeRecord needs a driver. it should be named driver.php */
-require 'driver.php';
+require_once 'driver.php';
 /* class generated automaticaly with Boroto */
 /* Felipe Vieira, 2015 */
 
@@ -81,7 +81,7 @@ class Usuario{
  }
 
  /* return an array containing all Usuario that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Usuario
@@ -91,7 +91,7 @@ class Usuario{
 }
 
 /* returns an array of Usuario containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Usuario';
@@ -109,7 +109,7 @@ class Usuario{
 /* saves to db */
  public function save() {
     $this->destroy();
-   $query = 'insert into Usuario (user_id,user_name,user_pass,user_desc,user_email) values ("'.$this->getUser_id().'","'.$this->getUser_name().'","'.$this->getUser_pass().'","'.$this->getUser_desc().'","'.$this->getUser_email().'")';
+   $query = 'insert into Usuario (user_name,user_pass,user_desc,user_email) values ("'.$this->getUser_name().'","'.$this->getUser_pass().'","'.$this->getUser_desc().'","'.$this->getUser_email().'")';
    $this->driver->exec($query);
 }
 
