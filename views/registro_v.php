@@ -1,4 +1,4 @@
-<!-- plantilla de login hecha por FVieira tiene como variables $status -->
+<!-- plantilla de login hecha por FVieira  -->
 <div class="col-md-4 col-md-offset-4 col-sm-12  box">
   <div class="banner" >Registro</div>
   <form action="../controllers/registro.php" method="post">
