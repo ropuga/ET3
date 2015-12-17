@@ -10,4 +10,6 @@
       <input type="submit" value="Submit">
     </div>
   </form>
+  <br>
+  <a href='registro.php'>Registrarme</a> o también...  <a href='home.php'>Entrar como invitado</a>
 </div>
