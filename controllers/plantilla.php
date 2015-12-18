@@ -1,12 +1,13 @@
 <?php
   // Plantilla de creación de un controlador por Martín Vázquez
 
+  session_start(); // se inicia el manejo de sesiones
+
   //Includes iniciales
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
   require_once 'navbar.php'; //Inclusión de navbar. Omitible si no la necesita
 
-  session_start(); // se inicia el manejo de sesiones
 
   //Conexion a la BD
   $db = DBManager::getInstance();

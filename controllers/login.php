@@ -1,8 +1,10 @@
 <?php
   // Controlador de login hecho por FVieira.
+  session_start(); // se inicia el manejo de sesiones
+
+
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
-  //session_start(); // se inicia el manejo de sesiones
   $db = DBManager::getInstance();
   $db->connect();
   $renderMain = new TemplateEngine();
@@ -11,7 +13,7 @@
 
   if(isset($_POST['name'])&&isset($_POST['pass'])){ // si ya se hizo algun post
     if($db->tryLogin($_POST['name'],$_POST['pass'])){ //comprueba los datos nombre de Usuario y contrseña
-      $_SESSION["name"] = $_POST['username'];
+      $_SESSION["name"] = $_POST['name'];
       header("location: home.php");
     }
     $renderlogin->status = "Usuario y/o contraseña invalido";
