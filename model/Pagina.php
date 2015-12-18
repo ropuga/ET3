@@ -1,6 +1,6 @@
 <?php
 /* the ORM and activeRecord needs a driver. it should be named driver.php */
-require 'driver.php';
+require_once 'driver.php';
 /* class generated automaticaly with Boroto */
 /* Felipe Vieira, 2015 */
 

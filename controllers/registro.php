@@ -9,7 +9,7 @@
   $db = Driver::getInstance(); //instanciación de la clase Driver que es un cliente de la db
 
   if(isset($_POST['name'])&&isset($_POST['pass'])){ //ya nos hicieron un post?
-    $usuario = new Usuario($db);
+    $usuario = new Usuario($db); //crear un nuevo usuario en la bd
     $usuario->setUser_name($_POST['name']);
     $usuario->setUser_pass($_POST['pass']);
     $usuario->setUser_email($_POST['email']);
