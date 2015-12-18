@@ -2,7 +2,7 @@
   // Controlador de login hecho por FVieira.
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
-  session_start(); // se inicia el manejo de sesiones
+  //session_start(); // se inicia el manejo de sesiones
   $db = DBManager::getInstance();
   $db->connect();
   $renderMain = new TemplateEngine();
@@ -20,6 +20,6 @@
   $renderMain->navbar = null; //el login no tiene navbar
 
   $renderMain->content = $renderlogin->render('login_v.php'); //que inserte en la variable $content de la plantilla main.php el resultado de renderizar login_v.php
-  echo $renderMain->renderMain(); // renderiza main y escribe la pagina
+  echo $renderMain->renderMain(); //renderiza main y escribe la pagina
 
  ?>
