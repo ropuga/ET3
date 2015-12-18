@@ -1,12 +1,13 @@
 <?php
-  // Plantilla de creación de un controlador por Martín Vázquez
+  // Controlador para Home, página principal de la aplicación por Martín Vázquez
+
+  session_start(); // se inicia el manejo de sesiones
 
   //Includes iniciales
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
   require_once 'navbar.php'; //Inclusión de navbar. Omitible si no la necesita
 
-  session_start(); // se inicia el manejo de sesiones
 
   //Conexion a la BD
   $db = DBManager::getInstance();
@@ -14,19 +15,22 @@
 
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
-  $renderPlantilla = new TemplateEngine();
+  $renderHome = new TemplateEngine();
 
-  $renderPlantilla->status = "<br/>"; //Se usa este campo para mostrar mensajes de error o avisos, salto de línea por defecto
+  $renderHome->status = "<br/>"; //Se usa este campo para mostrar mensajes de error o avisos, salto de línea por defecto
 
 
   //FUNCIONES DEL CONTROLADOR
-  //Escribimos aquí lo que hace este controlador en concreto (Comprueba el login, redirecciona...)
-
+  //Dibujar la tabla de apuntes más recientes.
+  //Dibujar botón de subir apuntes
+  //Dibujar botón de Nueva Nota
 
   //RENDERIZADO FINAL
   $renderMain->title = "PLANTILLA"; //Titulo y cabecera de la pagina
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
-  $renderMain->content = $renderPlantilla->render('plantilla_v.php'); //Inserción del contenido de la página
+  $renderMain->content = $renderHome->render('plantilla_v.php'); //Inserción del contenido de la página
+
+
 
   echo $renderMain->renderMain(); // Dibujado de la página al completo
 
