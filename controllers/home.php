@@ -16,21 +16,18 @@
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
   $renderHome = new TemplateEngine();
-
   $renderHome->status = "<br/>"; //Se usa este campo para mostrar mensajes de error o avisos, salto de línea por defecto
 
-
+  
   //FUNCIONES DEL CONTROLADOR
   //Dibujar la tabla de apuntes más recientes.
   //Dibujar botón de subir apuntes
   //Dibujar botón de Nueva Nota
 
   //RENDERIZADO FINAL
-  $renderMain->title = "PLANTILLA"; //Titulo y cabecera de la pagina
+  $renderMain->title = "INICIO"; //Titulo y cabecera de la pagina
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
-  $renderMain->content = $renderHome->render('plantilla_v.php'); //Inserción del contenido de la página
-
-
+  $renderMain->content = $renderHome->render('home_v.php'); //Inserción del contenido de la página
 
   echo $renderMain->renderMain(); // Dibujado de la página al completo
 
