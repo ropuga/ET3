@@ -39,7 +39,7 @@
       $renderMain->title = "fichero invalido";
     }
     $apunte->setFile_name($hashedName);
-    $apunte->save();
+    $apunte->create();
   }
   //RENDERIZADO FINAL
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita

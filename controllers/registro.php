@@ -13,7 +13,7 @@
     $usuario->setUser_name($_POST['name']);
     $usuario->setUser_pass($_POST['pass']);
     $usuario->setUser_email($_POST['email']);
-    $usuario->save(); //active record
+    $usuario->create(); //active record
     header("location: confirmacion.php"); //correcto
   }
 
