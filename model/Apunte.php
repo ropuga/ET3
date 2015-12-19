@@ -81,7 +81,7 @@ class Apunte{
  }
 
  /* return an array containing all Apunte that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Apunte
@@ -91,7 +91,7 @@ class Apunte{
 }
 
 /* returns an array of Apunte containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Apunte';
@@ -109,7 +109,7 @@ class Apunte{
 /* saves to db */
  public function save() {
     $this->destroy();
-   $query = 'insert into Apunte (apunte_id,mat_id,anho_academico,apunte_name,file_name) values ("'.$this->getApunte_id().'","'.$this->getMat_id().'","'.$this->getAnho_academico().'","'.$this->getApunte_name().'","'.$this->getFile_name().'")';
+   $query = 'insert into Apunte (mat_id,anho_academico,apunte_name,file_name) values ("'.$this->getMat_id().'","'.$this->getAnho_academico().'","'.$this->getApunte_name().'","'.$this->getFile_name().'")';
    $this->driver->exec($query);
 }
 

@@ -5,8 +5,6 @@
     <div class="form-group">
       <input class="form-control" name="apunteUploaded" type="file" /><br/>
       <input class="form-control" type="text" name="name" placeholder="Nombre"/><br/>
-      <input class="form-control" type="text" name="email" placeholder="email" /><br/>
-      <input class="form-control" type="password" name="pass" placeholder="contraseña" /><br/>
       <input class="form-control" type="submit" value="Submit">
     </div>
   </form>
