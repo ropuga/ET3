@@ -5,6 +5,7 @@
 
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
+  require_once 'modal.php';
   $db = DBManager::getInstance();
   $db->connect();
   $renderMain = new TemplateEngine();
@@ -16,7 +17,9 @@
       $_SESSION["name"] = $_POST['name'];
       header("location: home.php");
     }
-    $renderlogin->status = "Usuario y/o contraseña invalido";
+    $status = "Usuario y/o contraseña invalido";
+    $contenido = "Por favor, compruebe sus datos de acceso y compruebe si no tiene la tecla bloq mayus activada";
+    $renderlogin->status = renderModalError($status,$contenido);
   }
   $renderMain->title = "Login";
   $renderMain->navbar = null; //el login no tiene navbar

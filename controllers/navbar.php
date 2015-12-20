@@ -5,10 +5,10 @@ require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
 require_once '../cancerbero/php/DBManager.php'; //Se carga la API de la BD de cancerbero
 
 //Conexion a la BD
-$db = DBManager::getInstance();
-$db->connect();
 
 function renderNavBar(){
+  $db = DBManager::getInstance();
+  $db->connect();
   $navBar = new TemplateEngine();
   //Se ha hecho login?
   if(isset($_SESSION["name"])){

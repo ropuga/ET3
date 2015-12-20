@@ -89,7 +89,7 @@ class Apunte{
  }
 
  /* return an array containing all Apunte that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Apunte
@@ -99,7 +99,7 @@ class Apunte{
 }
 
 /* returns an array of Apunte containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Apunte';

@@ -11,3 +11,8 @@
     $render->materias = $materias->all();
     return $render->render('materiaCB_v.php');
   }
+
+  function anhoRenderComboBox(){
+    $render = new templateEngine();
+    return $render->render('anhoCB_v.php');
+  }
