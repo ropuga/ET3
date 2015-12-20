@@ -6,6 +6,7 @@
   require_once '../model/driver.php';
   require_once '../model/Apunte.php'; // se carga el driver de cancerbero
   require_once 'navbar.php';
+  require_once 'materiaCB.php';
 
   session_start(); // se inicia el manejo de sesiones
   $db = Driver::getInstance();
@@ -42,6 +43,7 @@
     $apunte->create();
   }
   //RENDERIZADO FINAL
+  $renderSubirApunte->comboboxMateria = materiaRenderComboBox();
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
   $renderMain->content = $renderSubirApunte->render('subirApunte_v.php'); //Inserción del contenido de la página
   echo $renderMain->renderMain(); // Dibujado de la página al completo

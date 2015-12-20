@@ -28,7 +28,7 @@ function renderNavBar(){
     //---x---x--- Si NO se ha hecho... ---x---x---
     $navBar->log=0; //el usuario NO está logeado
     $navBar->admin=0; //por lo tanto no puede ser administrador
-    $navBar->materia=1 //ni administrador de materia
+    $navBar->materia=1; //ni administrador de materia
   }
 
 

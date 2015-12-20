@@ -5,6 +5,7 @@
     <div class="form-group">
       <input class="form-control" name="apunteUploaded" type="file" /><br/>
       <input class="form-control" type="text" name="name" placeholder="Nombre"/><br/>
+      <?php echo $comboboxMateria; ?>
       <input class="form-control" type="submit" value="Submit">
     </div>
   </form>
