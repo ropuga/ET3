@@ -7,11 +7,14 @@
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
   require_once 'navbar.php'; //Inclusión de navbar. Omitible si no la necesita
+  require_once '../model/driver.php'; //Inclusión de Driver de las clases de "model". Omitible si no las usamos
 
-
-  //Conexion a la BD
+  //Conexion a la BD (Permite usar las funciones de DBManager de Cancerbero)
   $db = DBManager::getInstance();
   $db->connect();
+
+  //Instanciacion de Driver
+  $dbm = Driver::getInstance(); //Esto permite el uso de las clases de "model" (Usuario.php, Apunte.php etc...)
 
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
