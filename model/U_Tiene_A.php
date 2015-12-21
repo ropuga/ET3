@@ -57,7 +57,7 @@ class U_tiene_a{
    $arraytoret = array();
    $query='select *
      from U_Tiene_A
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }

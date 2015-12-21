@@ -57,7 +57,7 @@ class User_fun{
    $arraytoret = array();
    $query='select *
      from User_Fun
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }

@@ -57,7 +57,7 @@ class Titulacion{
    $arraytoret = array();
    $query='select *
      from Titulacion
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }

@@ -57,7 +57,7 @@ class Titulacion_usuario{
    $arraytoret = array();
    $query='select *
      from Titulacion_Usuario
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }

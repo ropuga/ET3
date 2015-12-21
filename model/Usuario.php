@@ -84,7 +84,7 @@ class Usuario{
    $arraytoret = array();
    $query='select *
      from Usuario
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }
