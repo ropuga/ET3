@@ -37,5 +37,5 @@
      echo 'Registro/Login';
   }
 ?></a>
-</div>
 <hr/>
+</div>

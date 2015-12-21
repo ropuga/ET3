@@ -1,6 +1,5 @@
 <!-- plantilla de subir apunte hecha por FVieira  -->
-<div class="col-md-4 col-md-offset-4 col-sm-12  box">
-<div class="banner" >Subir apunte</div>
+<div class="col-md-4 col-md-offset-4 col-sm-12">
 <p class="lead">Solo soportamos apuntes en .pdf</p>
 <p> a continuación cubra los siguientes campos para compartir su apunte </p>
 <p> por favor, lea las <a href="reglas.html">Reglas</a>
@@ -11,7 +10,7 @@
       <input class="form-control" type="text" name="name" placeholder="Nombre"/><br/>
       <?php echo $comboboxMateria; ?>
       <?php echo $comboboxAnho; ?>
-      <input class="form-control" type="submit" value="Submit">
+      <input class="form-control btn btn-success" type="submit" value="Submit">
     </div>
   </form>
 </div>
