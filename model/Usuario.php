@@ -2,7 +2,7 @@
 /* the ORM and activeRecord needs a driver. it should be named driver.php */
 /* class generated automaticaly with Boroto */
 /* Felipe Vieira, 2015 */
-
+require_once 'Titulacion.php';
 class Usuario{
 
  public $driver;
@@ -80,7 +80,7 @@ class Usuario{
  }
 
  /* return an array containing all Usuario that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Usuario
@@ -90,7 +90,7 @@ class Usuario{
 }
 
 /* returns an array of Usuario containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Usuario';
@@ -115,6 +115,14 @@ class Usuario{
    $query = 'insert into Usuario (user_name,user_pass,user_desc,user_email) values ("'.$this->getUser_name().'","'.$this->getUser_pass().'","'.$this->getUser_desc().'","'.$this->getUser_email().'")';
    $this->driver->exec($query);
 }
-
+//funcion custom creada por FVieira
+  public function titulaciones(){
+    $titulacion = new Titulacion($this->driver);
+    $query = "select * from Usuario,Titulacion,Titulacion_Usuario where
+              Usuario.user_id = Titulacion_Usuario.user_id and
+              Titulacion_Usuario.tit_id = Titulacion.tit_id;";
+    $results = $this->driver->exec($query);
+    return $titulacion->factory($results);
+  }
 }
 ?>
