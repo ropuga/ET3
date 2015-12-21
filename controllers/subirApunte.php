@@ -23,7 +23,7 @@
     //inicio colecta de datos para ser introducidos en la bd
     $apunte = new Apunte($db);
     $usuarios = new Usuario($db);
-    $usuario = $usuarios->findBy('user_name',"'".$_SESSION['name']."'");
+    $usuario = $usuarios->findBy('user_name',$_SESSION['name']);
     $id = $usuario[0]->getUser_id();
     $apunte->setUser_id($id);
     $apunte->setApunte_name($_POST['name']);
