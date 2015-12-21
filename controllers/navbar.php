@@ -27,7 +27,7 @@ function renderNavBar(){
     //---x---x--- Si se ha hecho... ---x---x---
     $navBar->log=1; //el usuario está logeado
     $usuario = new Usuario($dbm);
-    $usuario = $usuario->findBy('user_name',"'".$_SESSION['name']."'"); //CAMBIAME
+    $usuario = $usuario->findBy('user_name',$_SESSION['name']); //CAMBIAME
     $navBar->user_id = $usuario[0]->getUser_id();
     //El usuario es un administrador?
     if($db->existUserRol($_SESSION["name"],"AdminApuntorium")){
