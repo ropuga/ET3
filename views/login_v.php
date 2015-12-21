@@ -1,5 +1,5 @@
 <!-- plantilla de login hecha por FVieira tiene como variables $status -->
-<div class="col-md-4 col-md-offset-4 col-sm-12  box">
+<div class="col-md-4 col-md-offset-4 col-sm-12">
   <div class="lead text-center"> Login </div>
   <form action="../controllers/login.php" id="form" method="post">
     <div class="form-group">

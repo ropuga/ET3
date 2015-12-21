@@ -57,7 +57,7 @@ class Pag_fun{
    $arraytoret = array();
    $query='select *
      from Pag_Fun
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }

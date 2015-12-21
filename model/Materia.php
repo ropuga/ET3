@@ -66,7 +66,7 @@ class Materia{
    $arraytoret = array();
    $query='select *
      from Materia
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }
