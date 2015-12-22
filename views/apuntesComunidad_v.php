@@ -1,11 +1,11 @@
 <!-- Vista para mis Apuntes por Raul Villar -->
 
 <div class="col-md-4 col-sm-12">
-  <div class="banner"><h1>MIS APUNTES</h1></div>
+  <div class="banner"><h1>Apuntes de la comunidad</h1></div>
   <div>
     Filtrar
     <br>
-    <form action="misApuntes.php" method="post">
+    <form action="apuntesComunidad.php" method="post">
 	<!--<select class="form-control" name="titulacion">
     <option value="nil" selected> Seleccione una titulacion </option>
 	  <?php foreach($titulos as $titulo): ?>
@@ -31,28 +31,10 @@
 </div>
   <div class="col-sm-2"></div>
   <div class="col-sm-6">
-    <form action="delApunte.php" method="post">
-      <p class="lead banner">Subidos por mi </p>
-      <hr/>
-    <?php foreach($apuntes as $apunte): ?>
-      <div class="box">
-        <span class="izquierda">
-	      <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
-        <span class="fecha"><?php echo $apunte->getAnho_academico(); ?></span>
-        </span>
-        <span class="derecha">
-          <a class="btn btn-success" href="../apuntes/<?php echo $apunte->getRuta(); ?>">Abrir</a>
-          <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Borrar</button>
-        </span>
-     </div>
-     <br/>
-     <hr/>
-    <?php endforeach; ?>
-    </form>
-    <form action="deltieneapunte.php" method="post">
+    <form action="addtieneapunte.php" method="post">
       <p class="lead banner">Apuntes de la comunidad </p>
       <hr/>
-    <?php foreach($tieneapuntes as $apunte): ?>
+    <?php foreach($apuntes as $apunte): ?>
       <div class="box">
         <span class="izquierda">
         <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
@@ -61,7 +43,9 @@
         </span>
         <span class="derecha">
           <a class="btn btn-success" href="../apuntes/<?php echo $apunte->getRuta(); ?>">Abrir</a>
-          <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Borrar</button>
+          <?php if($logged): ?>
+          <button type="submit" class="btn btn-info" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Guardar</button>
+          <?php endif; ?>
         </span>
      </div>
      <br/>

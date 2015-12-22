@@ -3,6 +3,8 @@
 /* class generated automaticaly with Boroto */
 /* Felipe Vieira, 2015 */
 require_once 'Titulacion.php';
+require_once 'Apunte.php';
+
 class Usuario{
 
  public $driver;
@@ -120,9 +122,31 @@ class Usuario{
     $titulacion = new Titulacion($this->driver);
     $query = "select * from Usuario,Titulacion,Titulacion_Usuario where
               Usuario.user_id = Titulacion_Usuario.user_id and
-              Titulacion_Usuario.tit_id = Titulacion.tit_id;";
+              Titulacion_Usuario.tit_id = Titulacion.tit_id and
+              Usuario.user_id = '".$this->user_id."'";
     $results = $this->driver->exec($query);
     return $titulacion->factory($results);
+  }
+  public function tieneApuntes(){
+    $apunte = new Apunte($this->driver);
+    $query = "select * from Usuario,Apunte,U_Tiene_A where
+              Usuario.user_id = U_Tiene_A.user_id and
+              U_Tiene_A.apunte_id = Apunte.apunte_id and
+              Usuario.user_id = '".$this->user_id."'";
+    $results = $this->driver->exec($query);
+    return $apunte->factory($results);
+  }
+  public function apuntes(){
+    $apunte = new Apunte($this->driver);
+    $query = "select * from Usuario,Apunte where
+              Usuario.user_id = Apunte.user_id and
+              Usuario.user_id = '".$this->user_id."'";
+    $results = $this->driver->exec($query);
+    return $apunte->factory($results);
+  }
+  public function existeUsuario(){
+    $query = 'select * from Usuario where Usuario.user_name ="'.$this->user_name.'"';
+    return count($this->driver->exec($query)) > 0;
   }
 }
 ?>

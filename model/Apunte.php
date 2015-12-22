@@ -89,7 +89,7 @@ class Apunte{
  }
 
  /* return an array containing all Apunte that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Apunte
@@ -99,7 +99,7 @@ class Apunte{
 }
 
 /* returns an array of Apunte containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Apunte';
@@ -124,6 +124,12 @@ class Apunte{
    $query = 'insert into Apunte (mat_id,anho_academico,apunte_name,ruta,user_id) values ("'.$this->getMat_id().'","'.$this->getAnho_academico().'","'.$this->getApunte_name().'","'.$this->getRuta().'","'.$this->getUser_id().'")';
    $this->driver->exec($query);
 }
-
+// funciones custom hechas por fvieira
+  public function nombreAutor(){
+    $query = 'select * from Usuario where
+              Usuario.user_id = "'.$this->user_id.'"';
+    $result = $this->driver->exec($query);
+    return $result[0]['user_name'];
+  }
 }
 ?>
