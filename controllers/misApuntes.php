@@ -7,23 +7,25 @@
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../model/driver.php'; // se carga el driver de cancerbero
   require_once 'navbar.php'; //Inclusión de navbar. Omitible si no la necesita
-  require_once '../model/Apunte.php';
+  require_once '../model/Usuario.php';
   require_once '../model/Materia.php';
   require_once '../model/Titulacion.php';
   require_once 'comboboxes.php';
   //Conexion a la BD
   $db = Driver::getInstance();
   //inicio instancias render y creacion de comboboxes
-  $apuntes = new Apunte($db);
+  $usuario = new Usuario($db);
+  $usuario = $usuario->findBy('user_name',$_SESSION['name']);
+  $usuario = $usuario[0];
   $materias = new Materia($db);
   $titulaciones = new Titulacion($db);
-  $apuntes = $apuntes->all();
   $materias = $materias->all();
   $titulaciones = $titulaciones->all();
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
   $renderPlantilla = new TemplateEngine();
-
+  $renderPlantilla->apuntes = $usuario->apuntes();
+  $renderPlantilla->tieneapuntes = $usuario->tieneApuntes();
   $renderPlantilla->titulos = null;
   $renderPlantilla->materias = $materias;
   $renderPlantilla->anho = anhoRenderComboBox();
@@ -50,8 +52,6 @@
      }
     }
   }
-
-  $renderPlantilla->apuntes = $apuntes;
 
   //RENDERIZADO FINAL
   $renderMain->title = "Mis Apuntes"; //Titulo y cabecera de la pagina

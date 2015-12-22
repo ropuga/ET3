@@ -88,6 +88,6 @@ class Titulacion{
    $query = 'insert into Titulacion (tit_name) values ("'.$this->getTit_name().'")';
    $this->driver->exec($query);
 }
-
+// funcion custom 
 }
 ?>

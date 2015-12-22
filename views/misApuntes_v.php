@@ -32,6 +32,8 @@
   <div class="col-sm-2"></div>
   <div class="col-sm-6">
     <form action="delApunte.php" method="post">
+      <p class="lead">Subidos por mi </p>
+      <hr/>
     <?php foreach($apuntes as $apunte): ?>
       <div class="box">
         <span class="izquierda">
@@ -39,7 +41,26 @@
         <span class="fecha"><?php echo $apunte->getAnho_academico(); ?></span>
         </span>
         <span class="derecha">
-          <a class="btn btn-success" href="apunte/<?php echo $apunte->getRuta(); ?>">Descargar</a>
+          <a class="btn btn-success" href="../apuntes/<?php echo $apunte->getRuta(); ?>">Abrir</a>
+          <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Borrar</button>
+        </span>
+     </div>
+     <br/>
+     <hr/>
+    <?php endforeach; ?>
+    </form>
+    <form action="deltieneapunte.php" method="post">
+      <p class="lead">Apuntes de la comunidad </p>
+      <hr/>
+    <?php foreach($tieneapuntes as $apunte): ?>
+      <div class="box">
+        <span class="izquierda">
+        <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
+        <span class="fecha"><?php echo $apunte->getAnho_academico(); ?></span>
+        <div class="autor"> Autor: <?php echo $apunte->nombreAutor(); ?> </div>
+        </span>
+        <span class="derecha">
+          <a class="btn btn-success" href="../apuntes/<?php echo $apunte->getRuta(); ?>">Abrir</a>
           <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Borrar</button>
         </span>
      </div>
