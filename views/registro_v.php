@@ -9,4 +9,5 @@
       <input class="btn btn-success btn-block"type="submit" value="Submit">
     </div>
   </form>
+  <?php echo $modal ; ?>
 </div>

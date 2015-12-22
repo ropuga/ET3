@@ -8,9 +8,10 @@
 <form action="../controllers/deltit.php" class="header box-main" method="post">
   <?php foreach ($misTitulaciones as $key): ?>
     <div class="row box">
-      <span class="elem">Titulacion: <?php echo $key->getTit_name(); ?></span>
-      <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $key->getTit_id(); ?>">Eliminar</button>
+      <span class="izquierda"> <?php echo $key->getTit_name(); ?></span>
+      <span class="derecha"><button type="submit" class="btn btn-danger" type="submit" name="<?php echo $key->getTit_id(); ?>">Eliminar</button></span>
     </div>
+    <hr/>
   <?php endforeach; ?>
 </form>
 </div>
@@ -21,9 +22,10 @@
 <form action="../controllers/addtit.php" class="header box-main" method="post">
   <?php foreach ($allTitulaciones as $key): ?>
     <div class="row box">
-      <span class="elem">Titulacion: <?php echo $key->getTit_name(); ?></span>
-      <button type="submit" class="btn btn-success" type="submit" name="<?php echo $key->getTit_id(); ?>">Añadir</button>
+      <span class="izquierda"> <?php echo $key->getTit_name(); ?></span>
+      <span class="derecha"><button type="submit" class="btn btn-success" type="submit" name="<?php echo $key->getTit_id(); ?>">Añadir</button></span>
     </div>
+    <hr/>
   <?php endforeach; ?>
 </form>
 </div>

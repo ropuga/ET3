@@ -144,5 +144,9 @@ class Usuario{
     $results = $this->driver->exec($query);
     return $apunte->factory($results);
   }
+  public function existeUsuario(){
+    $query = 'select * from Usuario where Usuario.user_name ="'.$this->user_name.'"';
+    return count($this->driver->exec($query)) > 0;
+  }
 }
 ?>
