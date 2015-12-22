@@ -1,7 +1,22 @@
 .box {
-  text-align: center;
   padding: 10px;
   margin: 10px;
+
 }
 .elem{
+}
+.derecha{
+  float: right;
+  align-items: center;
+
+}
+.izquierda{
+  float: left;
+}
+.apunte {
+  font-size: 22px;
+}
+.fecha {
+  font-size: 12px;
+  font-style: italic;
 }

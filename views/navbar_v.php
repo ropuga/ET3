@@ -4,7 +4,7 @@
 <?php
   if($log==1){
     echo
-    '<a class="navbarColumn" href="misTitulaciones.php">Mis Titulaciones</a>
+    '<a class="navbarColumn" href="mistitulaciones.php">Mis Titulaciones</a>
     <a class="navbarColumn" href="misMaterias.php">Mis Materias</a>
     <a class="navbarColumn" href="misApuntes.php">Mis Apuntes</a>
     <a class="navbarColumn" href="misNotas.php">Mis Notas</a>
@@ -37,5 +37,5 @@
      echo 'Registro/Login';
   }
 ?></a>
-</div>
 <hr/>
+</div>
