@@ -31,7 +31,7 @@
 </div>
   <div class="col-sm-2"></div>
   <div class="col-sm-6">
-    <form action="deleteApunte.php" method="post">
+    <form action="delApunte.php" method="post">
     <?php foreach($apuntes as $apunte): ?>
       <div class="box">
         <span class="izquierda">
