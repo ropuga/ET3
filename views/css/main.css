@@ -1,7 +1,7 @@
 .box {
   padding: 10px;
   margin: 10px;
-
+  text-align: center;
 }
 .elem{
 }
@@ -19,4 +19,7 @@
 .fecha {
   font-size: 12px;
   font-style: italic;
+}
+.banner{
+  text-align: center;
 }
