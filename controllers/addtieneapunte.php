@@ -20,7 +20,7 @@
     }
   }
   $utienea = new U_Tiene_A($db);
-  $utienea->setApunte_id($apunte);
+  $utienea->setApunte_id($apunteid);
   $utienea->setUser_id($usuario->getUser_id());
   if($usuario->getUser_id() != $apunte->getUser_id()){
     $utienea->create();

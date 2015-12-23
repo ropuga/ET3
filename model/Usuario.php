@@ -129,7 +129,7 @@ class Usuario{
   }
   public function tieneApuntes(){
     $apunte = new Apunte($this->driver);
-    $query = "select * from Usuario,Apunte,U_Tiene_A where
+    $query = "select Apunte.apunte_id,Apunte.mat_id,Apunte.anho_academico,Apunte.apunte_name,Apunte.ruta, Apunte.user_id from Usuario,Apunte,U_Tiene_A where
               Usuario.user_id = U_Tiene_A.user_id and
               U_Tiene_A.apunte_id = Apunte.apunte_id and
               Usuario.user_id = '".$this->user_id."'";
