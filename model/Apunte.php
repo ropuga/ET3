@@ -93,7 +93,7 @@ class Apunte{
    $arraytoret = array();
    $query='select *
      from Apunte
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }
@@ -124,6 +124,12 @@ class Apunte{
    $query = 'insert into Apunte (mat_id,anho_academico,apunte_name,ruta,user_id) values ("'.$this->getMat_id().'","'.$this->getAnho_academico().'","'.$this->getApunte_name().'","'.$this->getRuta().'","'.$this->getUser_id().'")';
    $this->driver->exec($query);
 }
-
+// funciones custom hechas por fvieira
+  public function nombreAutor(){
+    $query = 'select * from Usuario where
+              Usuario.user_id = "'.$this->user_id.'"';
+    $result = $this->driver->exec($query);
+    return $result[0]['user_name'];
+  }
 }
 ?>

@@ -53,17 +53,17 @@ class Titulacion_usuario{
  }
 
  /* return an array containing all Titulacion_Usuario that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Titulacion_Usuario
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }
 
 /* returns an array of Titulacion_Usuario containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Titulacion_Usuario';
@@ -85,7 +85,7 @@ class Titulacion_usuario{
    $this->driver->exec($query);
 }
  public function create() {
-   $query = 'insert into Titulacion_Usuario (user_id) values ("'.$this->getUser_id().'")';
+   $query = 'insert into Titulacion_Usuario (tit_id,user_id) values ("'.$this->getTit_id().'","'.$this->getUser_id().'")';
    $this->driver->exec($query);
 }
 

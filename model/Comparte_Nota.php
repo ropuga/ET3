@@ -57,7 +57,7 @@ class Comparte_nota{
    $arraytoret = array();
    $query='select *
      from Comparte_Nota
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }

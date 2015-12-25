@@ -57,7 +57,7 @@ class Rol_fun{
    $arraytoret = array();
    $query='select *
      from Rol_Fun
-     where '.$key.'='.$value;
+     where '.$key.'="'.$value.'"';
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }
