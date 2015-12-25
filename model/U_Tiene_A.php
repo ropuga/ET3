@@ -74,7 +74,7 @@ class U_tiene_a{
 /* deletes from db */
  public function destroy(){
    $query = 'delete from U_Tiene_A where
-   apunte_id = "'.$this->getApunte_id().'"';
+   apunte_id = "'.$this->getApunte_id().'" and user_id= "'.$this->getUser_id().'"';
    $this->driver->exec($query);
  }
 

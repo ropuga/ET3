@@ -50,7 +50,7 @@
     <?php endforeach; ?>
     </form>
     <form action="deltieneapunte.php" method="post">
-      <p class="lead banner">Apuntes de la comunidad </p>
+      <p class="lead banner">Apuntes guradados de la comunidad </p>
       <hr/>
     <?php foreach($tieneapuntes as $apunte): ?>
       <div class="box">

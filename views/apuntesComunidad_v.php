@@ -1,9 +1,8 @@
 <!-- Vista para mis Apuntes por Raul Villar -->
 
 <div class="col-md-4 col-sm-12">
-  <div class="banner"><h1>Apuntes de la comunidad</h1></div>
+  <div class="banner"><h1>Filtrar</h1></div>
   <div>
-    Filtrar
     <br>
     <form action="apuntesComunidad.php" method="post">
 	<!--<select class="form-control" name="titulacion">
@@ -29,15 +28,16 @@
   <a class="btn btn-success btn-block" href='../controllers/subirApunte.php'> Subir un apunte </a>
   </div>
 </div>
-  <div class="col-sm-2"></div>
-  <div class="col-sm-6">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
     <form action="addtieneapunte.php" method="post">
       <p class="lead banner">Apuntes de la comunidad </p>
       <hr/>
+      <input class="form-control buscatit" placeholder="Buscar" type="text" name="name"><br/>
     <?php foreach($apuntes as $apunte): ?>
-      <div class="box">
+      <div class="box row itemtit">
         <span class="izquierda">
-        <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
+        <span class="apunte lead"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
         <span class="fecha"><?php echo $apunte->getAnho_academico(); ?></span>
         <div class="autor"> Autor: <?php echo $apunte->nombreAutor(); ?> </div>
         </span>
@@ -48,8 +48,6 @@
           <?php endif; ?>
         </span>
      </div>
-     <br/>
-     <hr/>
     <?php endforeach; ?>
     </form>
   </div>
