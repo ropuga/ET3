@@ -37,8 +37,8 @@
     <?php foreach($apuntes as $apunte): ?>
       <div class="box row itemtit">
         <span class="izquierda">
-        <span class="apunte lead"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
-        <span class="fecha"><?php echo $apunte->getAnho_academico(); ?></span>
+        <span class="apunte lead"><?php echo $apunte->getApunte_name(); ?></span>
+        <div class="info autor"><?php echo $apunte->nombreMateria(); ?>(<?php echo $apunte->nombreTitulacion(); ?>), <?php echo $apunte->getAnho_academico(); ?></div>
         <div class="autor"> Autor: <?php echo $apunte->nombreAutor(); ?> </div>
         </span>
         <span class="derecha">

@@ -5,7 +5,8 @@
   require_once '../model/Usuario.php';
 
   session_start();
-  $apunteid = (array_keys($_POST)[0]);
+  $apunteid = (array_keys($_POST)[1]);
+  echo $apunteid;
   $db = Driver::getInstance();
   $apunte = new Apunte($db);
   $apunte = $apunte->findBy('apunte_id',$apunteid)[0];
@@ -25,5 +26,5 @@
   if($usuario->getUser_id() != $apunte->getUser_id()){
     $utienea->create();
   }
-  header("location: apuntesComunidad.php");
+  //header("location: apuntesComunidad.php");
 ?>
