@@ -5,9 +5,9 @@
   </div>
 
 <div>
-  <form action="../controllers/consultaTitulaciones.php"  method="post">
+  <form action="../controllers/addNuevaTitulacion.php"  method="post">
     <div class="form-group">
-      <input class="form-control" type="text" name="materianueva" placeholder="Nombre"/><br/>
+      <input class="form-control" type="text" name="materianueva" placeholder="Nombre de la nueva titulacion"/><br/>
       <input class="form-control btn btn-success" type="submit" value="Añadir nueva Titulacion">
     </div>
   </form>
@@ -16,19 +16,19 @@
 
 <div class="col-sm-2"></div>
 <div class="col-sm-6">
-<form action="delTitulo.php" method="post">
+<form action="deleteTitulacion.php" method="post">
   <p class="lead banner">Titulaciones</p>
+  <hr/>
+  <input class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
 <?php foreach($titulaciones as $titulo): ?>
-  <div class="box">
+  <div class="row box itemtit">
     <span class="izquierda">
-    <span class="apunte"><?php echo $titulo->getTit_id(); ?></span>&nbsp;.&nbsp;
-    <span class="fecha"><?php echo $titulo->getTit_name(); ?></span>
+    <span class="lead"><?php echo $titulo->getTit_name(); ?></span>
     </span>
     <span class="derecha">
       <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $titulo->getTit_id(); ?>">Borrar</button>
     </span>
  </div>
- <br/>
 <?php endforeach; ?>
 </form>
 
