@@ -1,5 +1,5 @@
 <?php
-  // Plantilla de creación de un controlador por Martín Vázquez
+  // por Daniel de Alonso
 
   session_start(); // se inicia el manejo de sesiones
 
