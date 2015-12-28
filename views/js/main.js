@@ -3,6 +3,17 @@ $(document).ready(function() { main(); });
 function main(){
   $('.buscatit').keyup(function(){busca($(this).val(),'.itemtit')});
   $('.buscatit2').keyup(function(){busca($(this).val(),'.itemtit2')});
+
+}
+
+function findPos(obj) {
+    var curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    return [curtop];
+    }
 }
 
 function busca(buscador,tipo){
