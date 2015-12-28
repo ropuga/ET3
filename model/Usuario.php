@@ -4,6 +4,7 @@
 /* Felipe Vieira, 2015 */
 require_once 'Titulacion.php';
 require_once 'Apunte.php';
+require_once 'Materia.php';
 
 class Usuario{
 
@@ -129,9 +130,9 @@ class Usuario{
   }
 
   public function materias(){
-    $materia = Materia($this->driver);
+    $materia = new Materia($this->driver);
     $query = "select * from Usuario,Materia,Materia_Usuario where
-              Usuario.user_id = MAteria_Usuario.user_id and
+              Usuario.user_id = Materia_Usuario.user_id and
               Materia_Usuario.mat_id = Materia.mat_id and
               Usuario.user_id = '".$this->user_id."'";
     $results = $this->driver->exec($query);

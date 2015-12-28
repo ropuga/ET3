@@ -85,7 +85,7 @@ class Materia_usuario{
    $this->driver->exec($query);
 }
  public function create() {
-   $query = 'insert into Materia_Usuario (user_id) values ("'.$this->getUser_id().'")';
+   $query = 'insert into Materia_Usuario (mat_id,user_id) values ("'.$this->getMat_id().'","'.$this->getUser_id().'")';
    $this->driver->exec($query);
 }
 

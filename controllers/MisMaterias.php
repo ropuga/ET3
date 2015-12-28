@@ -16,18 +16,19 @@
 
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
-  $rendermistit = new TemplateEngine();
+  $rendermismaterias = new TemplateEngine();
   $titulaciones = new Titulacion($db);
   $usuario = new Usuario($db);
+
   $usuario = $usuario->findBy('user_name',$_SESSION['name']);
   $misMaterias = $usuario[0]->materias();
-  $allMaterias = $materias->all();
+  $misTitulaciones = $usuario[0]->titulaciones();
 
-  $rendermistit->misMaterias = $misMaterias;
-  $rendermistit->allMaterias= $allMaterias;
+  $rendermismaterias->misMaterias = $misMaterias;
+  $rendermismaterias->misTitulaciones = $misTitulaciones;
   $renderMain->title = "Mis materias"; //Titulo y cabecera de la pagina
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
-  $renderMain->content = $rendermistit->render('misMaterias_v.php'); //Inserción del contenido de la página
+  $renderMain->content = $rendermismaterias->render('misMaterias_v.php'); //Inserción del contenido de la página
 
   echo $renderMain->renderMain(); // Dibujado de la página al completo
 
