@@ -3,11 +3,12 @@
   <div class="lead text-center"> Login </div>
   <form action="../controllers/login.php" id="form" method="post">
     <div class="form-group">
-      <input class="form-control" type="text" name="name"><br/>
-      <input class="form-control" type="password" name="pass">
+      <input class="form-control" placeholder="usuario" type="text" name="name"><br/>
+      <input class="form-control" type="password" placeholder="contraseña" name="pass">
       <div class"error"><?php echo $status; ?></div>
+      <br/>
       <!-- <div class="centered btn btn-default" onclick="submit()"> Login </div> -->
-      <input type="submit" value="Submit">
+      <input class="btn btn-success btn-block"type="submit" value="Entrar">
     </div>
   </form>
   <br>

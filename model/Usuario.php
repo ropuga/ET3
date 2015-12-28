@@ -4,6 +4,7 @@
 /* Felipe Vieira, 2015 */
 require_once 'Titulacion.php';
 require_once 'Apunte.php';
+require_once 'Materia.php';
 
 class Usuario{
 
@@ -127,9 +128,20 @@ class Usuario{
     $results = $this->driver->exec($query);
     return $titulacion->factory($results);
   }
+
+  public function materias(){
+    $materia = new Materia($this->driver);
+    $query = "select * from Usuario,Materia,Materia_Usuario where
+              Usuario.user_id = Materia_Usuario.user_id and
+              Materia_Usuario.mat_id = Materia.mat_id and
+              Usuario.user_id = '".$this->user_id."'";
+    $results = $this->driver->exec($query);
+    return $materia->factory($results);
+  }
+
   public function tieneApuntes(){
     $apunte = new Apunte($this->driver);
-    $query = "select * from Usuario,Apunte,U_Tiene_A where
+    $query = "select Apunte.apunte_id,Apunte.mat_id,Apunte.anho_academico,Apunte.apunte_name,Apunte.ruta, Apunte.user_id from Usuario,Apunte,U_Tiene_A where
               Usuario.user_id = U_Tiene_A.user_id and
               U_Tiene_A.apunte_id = Apunte.apunte_id and
               Usuario.user_id = '".$this->user_id."'";

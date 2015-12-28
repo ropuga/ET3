@@ -9,5 +9,6 @@
       <input class="btn btn-success btn-block"type="submit" value="Submit">
     </div>
   </form>
+  <a href='login.php'>Volver</a>
   <?php echo $modal ; ?>
 </div>

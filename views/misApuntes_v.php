@@ -35,28 +35,26 @@
       <p class="lead banner">Subidos por mi </p>
       <hr/>
     <?php foreach($apuntes as $apunte): ?>
-      <div class="box">
+      <div class="row box">
         <span class="izquierda">
-	      <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
-        <span class="fecha"><?php echo $apunte->getAnho_academico(); ?></span>
+	      <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>
+        <div class="info autor"><?php echo $apunte->nombreMateria(); ?>(<?php echo $apunte->nombreTitulacion(); ?>), <?php echo $apunte->getAnho_academico(); ?></div>
         </span>
         <span class="derecha">
           <a class="btn btn-success" href="../apuntes/<?php echo $apunte->getRuta(); ?>">Abrir</a>
           <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Borrar</button>
         </span>
      </div>
-     <br/>
-     <hr/>
     <?php endforeach; ?>
     </form>
     <form action="deltieneapunte.php" method="post">
-      <p class="lead banner">Apuntes de la comunidad </p>
+      <p class="lead banner">Apuntes guradados de la comunidad </p>
       <hr/>
     <?php foreach($tieneapuntes as $apunte): ?>
-      <div class="box">
+      <div class="row box">
         <span class="izquierda">
-        <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>&nbsp;&nbsp;&nbsp;,
-        <span class="fecha"><?php echo $apunte->getAnho_academico(); ?></span>
+        <span class="apunte"><?php echo $apunte->getApunte_name(); ?></span>
+        <div class="info autor"><?php echo $apunte->nombreMateria(); ?>(<?php echo $apunte->nombreTitulacion(); ?>), <?php echo $apunte->getAnho_academico(); ?></div>
         <div class="autor"> Autor: <?php echo $apunte->nombreAutor(); ?> </div>
         </span>
         <span class="derecha">
@@ -64,8 +62,6 @@
           <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Borrar</button>
         </span>
      </div>
-     <br/>
-     <hr/>
     <?php endforeach; ?>
     </form>
   </div>

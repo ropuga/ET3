@@ -53,7 +53,7 @@ class Materia_usuario{
  }
 
  /* return an array containing all Materia_Usuario that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Materia_Usuario
@@ -63,7 +63,7 @@ class Materia_usuario{
 }
 
 /* returns an array of Materia_Usuario containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Materia_Usuario';
@@ -74,7 +74,7 @@ class Materia_usuario{
 /* deletes from db */
  public function destroy(){
    $query = 'delete from Materia_Usuario where
-   mat_id = "'.$this->getMat_id().'"';
+   mat_id = "'.$this->getMat_id().'" and user_id = "'.$this->getUser_id().'"';
    $this->driver->exec($query);
  }
 
@@ -85,7 +85,7 @@ class Materia_usuario{
    $this->driver->exec($query);
 }
  public function create() {
-   $query = 'insert into Materia_Usuario (user_id) values ("'.$this->getUser_id().'")';
+   $query = 'insert into Materia_Usuario (mat_id,user_id) values ("'.$this->getMat_id().'","'.$this->getUser_id().'")';
    $this->driver->exec($query);
 }
 

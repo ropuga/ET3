@@ -1,7 +1,11 @@
+body{
+  /*background-image: url("../media/wood3.jpg");*/
+}
 .box {
   padding: 10px;
   margin: 10px;
   text-align: center;
+  border-bottom: 1px solid #eee;
 }
 .elem{
 }
@@ -22,4 +26,7 @@
 }
 .banner{
   text-align: center;
+}
+.autor{
+  text-align: left;
 }
