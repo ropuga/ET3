@@ -74,7 +74,7 @@ class Administra{
 /* deletes from db */
  public function destroy(){
    $query = 'delete from Administra where
-   user_id = "'.$this->getUser_id().'"';
+   user_id = "'.$this->getUser_id().'" and mat_id = "'.$this->getMat_id().'"';
    $this->driver->exec($query);
  }
 //FUNCION NECESARIA AdministradoresMateria NO ELIMINAR
