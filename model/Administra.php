@@ -53,7 +53,7 @@ class Administra{
  }
 
  /* return an array containing all Administra that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Administra
@@ -63,10 +63,10 @@ class Administra{
 }
 
 /* returns an array of Administra containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
-     from Administra';
+     from Administra order by user_id'; //Añadido order by, importante en un tabla
    $results = $this->driver->exec($query);
    return $this->factory($results);
 }
@@ -74,8 +74,17 @@ class Administra{
 /* deletes from db */
  public function destroy(){
    $query = 'delete from Administra where
-   user_id = "'.$this->getUser_id().'"';
+   user_id = "'.$this->getUser_id().'" and mat_id = "'.$this->getMat_id().'"';
    $this->driver->exec($query);
+ }
+//FUNCION NECESARIA AdministradoresMateria NO ELIMINAR
+ public function existe($user, $mat){
+   $query = 'select count(*) as ret from Administra where user_id='.$user.' and mat_id='.$mat.'';
+   if($this->driver->exec($query)[0]["ret"]>0){
+     return true;
+   }else {
+     return false;
+   }
  }
 
 /* saves to db */
@@ -85,7 +94,7 @@ class Administra{
    $this->driver->exec($query);
 }
  public function create() {
-   $query = 'insert into Administra (mat_id) values ("'.$this->getMat_id().'")';
+   $query = 'insert into Administra (user_id,mat_id) values ("'.$this->getUser_id().'","'.$this->getMat_id().'")';
    $this->driver->exec($query);
 }
 

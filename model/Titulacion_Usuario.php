@@ -74,7 +74,7 @@ class Titulacion_usuario{
 /* deletes from db */
  public function destroy(){
    $query = 'delete from Titulacion_Usuario where
-   tit_id = "'.$this->getTit_id().'"';
+   tit_id = "'.$this->getTit_id().'" and user_id = "'.$this->getUser_id().'"';
    $this->driver->exec($query);
  }
 

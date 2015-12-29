@@ -53,7 +53,7 @@ class U_tiene_a{
  }
 
  /* return an array containing all U_Tiene_A that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from U_Tiene_A
@@ -63,7 +63,7 @@ class U_tiene_a{
 }
 
 /* returns an array of U_Tiene_A containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from U_Tiene_A';
@@ -74,7 +74,7 @@ class U_tiene_a{
 /* deletes from db */
  public function destroy(){
    $query = 'delete from U_Tiene_A where
-   apunte_id = "'.$this->getApunte_id().'"';
+   apunte_id = "'.$this->getApunte_id().'" and user_id= "'.$this->getUser_id().'"';
    $this->driver->exec($query);
  }
 
@@ -85,7 +85,7 @@ class U_tiene_a{
    $this->driver->exec($query);
 }
  public function create() {
-   $query = 'insert into U_Tiene_A (user_id) values ("'.$this->getUser_id().'")';
+   $query = 'insert into U_Tiene_A (apunte_id,user_id) values ("'.$this->getApunte_id().'","'.$this->getUser_id().'")';
    $this->driver->exec($query);
 }
 

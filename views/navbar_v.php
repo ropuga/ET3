@@ -1,11 +1,11 @@
 <div class="col-sm-12">
 <a class="navbarColumn" href="home.php">Inicio</a>
-<a class="navbarColumn" href="buscarApuntes">Buscar Apuntes</a>
+<a class="navbarColumn" href="apuntesComunidad.php">Buscar Apuntes</a>
 <?php
   if($log==1){
     echo
-    '<a class="navbarColumn" href="misTitulaciones.php">Mis Titulaciones</a>
-    <a class="navbarColumn" href="misMaterias.php">Mis Materias</a>
+    '<a class="navbarColumn" href="mistitulaciones.php">Mis Titulaciones</a>
+    <a class="navbarColumn" href="MisMaterias.php">Mis Materias</a>
     <a class="navbarColumn" href="misApuntes.php">Mis Apuntes</a>
     <a class="navbarColumn" href="misNotas.php">Mis Notas</a>
     <a class="navbarColumn" href="popup_de_notificaciones_sin_hacer.php">Notificaciones</a>
@@ -37,5 +37,5 @@
      echo 'Registro/Login';
   }
 ?></a>
-</div>
 <hr/>
+</div>

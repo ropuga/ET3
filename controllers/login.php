@@ -10,7 +10,7 @@
   $db->connect();
   $renderMain = new TemplateEngine();
   $renderlogin = new TemplateEngine(); //instancias de TemplateEngine
-  $renderlogin->status = "<br/>"; //por defecto no hay ningun error (en la plantilla login_v la variable $status valdrá <br/>)
+  $renderlogin->status = null; //por defecto no hay ningun error (en la plantilla login_v la variable $status valdrá <br/>)
 
   if(isset($_POST['name'])&&isset($_POST['pass'])){ // si ya se hizo algun post
     if($db->tryLogin($_POST['name'],$_POST['pass'])){ //comprueba los datos nombre de Usuario y contrseña

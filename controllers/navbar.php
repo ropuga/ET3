@@ -21,7 +21,7 @@ function renderNavBar(){
   $navBar->log=0; //el usuario NO está logeado
   $navBar->admin=0; //por lo tanto no puede ser administrador
   $navBar->materia=0; //ni administrador de materia
-  $navBar->user_id=null;
+  $navBar->user_id=null; //y no hay ID de usuario
   //Se ha hecho login?
   if(isset($_SESSION["name"])){
     //---x---x--- Si se ha hecho... ---x---x---
