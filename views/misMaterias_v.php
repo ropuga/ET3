@@ -25,7 +25,7 @@
     <?php foreach ($titulacion->materias() as $materia): ?>
     <div class="row box itemtit2">
       <span class="izquierda"> <?php echo $materia->getMat_name(); ?></span>
-      <span class="derecha"><button type="submit" class="btn btn-success" type="submit" name="<?php echo $materia->getTit_id(); ?>">Añadir</button></span>
+      <span class="derecha"><button type="submit" class="btn btn-success" type="submit" name="<?php echo $materia->getMat_id(); ?>">Añadir</button></span>
     </div>
     <?php endforeach; ?>
   <?php endforeach; ?>
