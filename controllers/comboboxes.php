@@ -12,6 +12,14 @@
     return $render->render('materiaCB_v.php');
   }
 
+  function titulacionRenderComboBox(){
+    $render = new templateEngine();
+    $db = Driver::getInstance();
+    $titulaciones = new Titulacion($db);
+    $render->titulaciones = $titulaciones->all();
+    return $render->render('titulacionCB_v.php');
+  }
+
   function anhoRenderComboBox(){
     $render = new templateEngine();
     return $render->render('anhoCB_v.php');
