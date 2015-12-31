@@ -15,7 +15,7 @@
 	<select class="form-control" name="materia">
     <option value="nil" selected> Seleccione una materia </option>
 	  <?php foreach($materias as $materia): ?>
-	    <option value="<?php echo $materia->getMat_id(); ?>"><?php echo $materia->getMat_name(); ?></option>
+	    <option value="<?php echo $materia->getMat_id(); ?>"><?php echo $materia->getMat_name(); ?> (<?php echo $materia->nombreTitulacion(); ?>)</option>
 	  <?php endforeach; ?>
 	</select><br/>
 
@@ -28,12 +28,15 @@
   </form>
   <a class="btn btn-success btn-block" href='../controllers/subirApunte.php'> Subir un apunte </a>
   </div>
+  <br/>
+  <p class="text-muted">Nota: le apareceran solo las materias a las que esta matriculado</p>
 </div>
   <div class="col-sm-2"></div>
   <div class="col-sm-6">
     <form action="delApunte.php" method="post">
       <p class="lead banner">Subidos por mi </p>
       <hr/>
+      <?php if(empty($apuntes))echo "<p class='text-center'>Aun no has subido ningun apunte<p/>"; ?>
     <?php foreach($apuntes as $apunte): ?>
       <div class="row box">
         <span class="izquierda">
@@ -50,6 +53,7 @@
     <form action="deltieneapunte.php" method="post">
       <p class="lead banner">Apuntes guradados de la comunidad </p>
       <hr/>
+      <?php if(empty($tieneapuntes))echo "<p class='text-center'>Aun no has guardado ningun apunte<p/>"; ?>
     <?php foreach($tieneapuntes as $apunte): ?>
       <div class="row box">
         <span class="izquierda">

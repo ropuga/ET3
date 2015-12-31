@@ -6,6 +6,7 @@
   require_once '../model/driver.php';
   require_once '../model/Apunte.php';
   require_once '../model/Usuario.php';
+  require_once '../model/Materia.php';
   require_once 'navbar.php';
   require_once 'comboboxes.php';
   require_once 'modal.php';
@@ -30,6 +31,7 @@
     $apunte->setMat_id($_POST['materia']);
     $apunte->setAnho_academico($_POST['anho']);
     //fin colecta de datos
+    $renderSubirApunte->materias = $usuario->materias(); //se renderiza el combobox materia
 
     //inicio operacion subir archivo
     $titulo = "Archivo subido correctamente";
@@ -59,7 +61,6 @@
     $renderSubirApunte->modal = renderModal($titulo,$contenido);
   }
   //RENDERIZADO FINAL
-  $renderSubirApunte->comboboxMateria = materiaRenderComboBox(); //se renderiza el combobox materia
   $renderSubirApunte->comboboxAnho = anhoRenderComboBox(); // se renderiza el combobox de año
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
   $renderMain->content = $renderSubirApunte->render('subirApunte_v.php'); //Inserción del contenido de la página

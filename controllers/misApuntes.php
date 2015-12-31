@@ -19,7 +19,7 @@
   $usuario = $usuario[0];
   $materias = new Materia($db);
   $titulaciones = new Titulacion($db);
-  $materias = $materias->all();
+  $materias = $usuario->materias();
   $titulaciones = $titulaciones->all();
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
