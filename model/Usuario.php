@@ -5,6 +5,7 @@
 require_once 'Titulacion.php';
 require_once 'Apunte.php';
 require_once 'Materia.php';
+require_once 'Nota.php';
 
 class Usuario{
 
@@ -156,8 +157,25 @@ class Usuario{
     $results = $this->driver->exec($query);
     return $apunte->factory($results);
   }
+  public function notas(){
+    $nota = new Nota($this->driver);
+    $query = "select * from Usuario,Nota where
+              Usuario.user_id = Nota.user_id and
+              Usuario.user_id = '".$this->user_id."'";
+    $results = $this->driver->exec($query);
+    return $nota->factory($results);
+  }
   public function existeUsuario(){
     $query = 'select * from Usuario where Usuario.user_name ="'.$this->user_name.'"';
+    return count($this->driver->exec($query)) > 0;
+  }
+  public function canEditNota($nota){
+    if($this->getUser_id() == $nota->getUser_id()){
+      return true;
+    }
+    $query = "select * from Usuario, Comparte_Nota where
+              Usuario.user_id = Comparte_Nota.user_id and
+              Comparte_Nota.nota_id = '".$nota->getNota_id()."'";
     return count($this->driver->exec($query)) > 0;
   }
 }

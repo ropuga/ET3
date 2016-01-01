@@ -28,9 +28,13 @@
     header("location: nuevaNota.php");
   }else{
     $nota = new Nota($db);
-    $nota = $nota->findBy('nota_id',$_GET['nota'])[0];
-    if($nota->getUser_id() != $user->getUser_id() ){
-      header("location: misNota.php");
+    $nota = $nota->findBy('nota_id',$_GET['nota']);
+    if( ! $nota ){
+      header("location: misNotas.php");
+    }
+    $nota = $nota[0];
+    if( ! $user->canEditNota($nota) ){
+      header("location: misNotas.php");
     }
     $renderPlantilla->nota = $nota->getNota_id();
     $renderPlantilla->titulo = $nota->getNota_name();

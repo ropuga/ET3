@@ -33,8 +33,8 @@
   </div>
 
 </div>
-  <div class="col-sm-2"></div>
-  <div class="col-sm-6">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
     <form action="delNota.php" method="post">
       <p class="lead banner">Mis Notas </p>
       <hr/>

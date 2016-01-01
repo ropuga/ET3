@@ -17,8 +17,8 @@
   $usuario = $usuario->findBy('user_name',$_SESSION['name']);
   $usuario = $usuario[0];
 
-  $notas = new Nota($db);
-  $notas = $notas->all();
+
+  $notas = $usuario->notas();
 
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
