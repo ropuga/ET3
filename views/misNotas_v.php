@@ -1,7 +1,7 @@
 <!-- Vista para mis notas por Raul Villar -->
 
 <div class="col-md-4 col-sm-12">
-  <div class="banner"><h1>MIS Notas</h1></div>
+  <div class="banner"><h1>Mis Notas</h1></div>
   <div>
     Filtrar
     <br>
@@ -26,7 +26,9 @@
       </select>
   </div>
   <div>
+    <br/>
     <button class="btn btn-info btn-block" type="submit"> Filtrar </button>
+    <a href="nuevaNota.php" class="btn btn-success btn-block">Crear Nueva Nota</a>
     </form>
   </div>
 
@@ -36,18 +38,18 @@
     <form action="delNota.php" method="post">
       <p class="lead banner">Mis Notas </p>
       <hr/>
+      <input class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
     <?php foreach($notas as $nota): ?>
-      <div class="box">
+      <div class="itemtit row box">
         <span class="izquierda">
 	      <span class="apunte"><?php echo $nota->getNota_name(); ?></span>&nbsp;&nbsp;&nbsp;,
         <span class="fecha"><?php echo $nota->getFecha(); ?></span>
         </span>
         <span class="derecha">
+          <a href="editarNota.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-success">Editar</a>
           <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $nota->getNota_id(); ?>">Borrar</button>
         </span>
      </div>
-     <br/>
-     <hr/>
     <?php endforeach; ?>
     </form>
 
