@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<span>
 <a class="navbarColumn" href="home.php">Inicio</a>
 <a class="navbarColumn" href="apuntesComunidad.php">Buscar Apuntes</a>
 <?php
@@ -11,10 +11,10 @@
     <a class="navbarColumn" href="popup_de_notificaciones_sin_hacer.php">Notificaciones</a>
 
     <span class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <a class=" navbarColumn dropdown-toggle" type="button" id="dropdownMenu1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Administrar
         <span class="caret"></span>
-      </button>
+      </a>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li><a href="../cancerbero/GestionUsuarios/ModificarPass.php?id='.$user_id.'">Cambiar Contraseña</a></li>';
     if($materia==1){
@@ -37,5 +37,4 @@
      echo 'Registro/Login';
   }
 ?></a>
-<hr/>
-</div>
+</span>

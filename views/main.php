@@ -12,13 +12,23 @@
     <script src="../views/js/main.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../views/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../views/js/jquery-ui.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1><?php echo $title; ?></h1>
+    <div class="container-fluid">
       <div class="row">
-        <?php echo $navbar; ?>
+        <div class="logobanner col-sm-12">
+          <div class="logomain container">
+              <span class="logobar">
+              <span class="logo">Apuntorium</span><?php echo $navbar; ?>
+              </span>
+          </div>
+        </div>
+            <!--<h1 class="logoTitle"><?php echo $title; ?></h1>-->
+            <br/>
       </div>
+    </div>
+    <div class="container">
       <div class="row">
         <?php echo $content; ?>
       </div>

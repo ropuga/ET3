@@ -1,6 +1,6 @@
 <!-- Vista para plantilla por Martín Vázquez -->
 <br/><br/><br/>
-<div class="col-md-6 col-sm-12">
+<div class="col-md-5 col-sm-12 ui-widget-content">
   <p class="lead"> Titulaciones en la que esta matriculado </p>
   <p> Aqui se muestra las titulaciones en la que esta actualmente matriculado.
     Puede añadir mas usando la tabla de la derecha o eliminar alguna titulacion usando esta tabla</p>
@@ -16,7 +16,8 @@
   <?php endforeach; ?>
 </form>
 </div>
-<div class="col-md-6 col-sm-12">
+<div class="col-md-2"></div>
+<div class="col-md-5 col-sm-12">
   <p class="lead"> Todas las titulaciones </p>
   <p> Aqui se muestran todas las titulaciones disponibles. Si no encuentra su titulacion contacte con un administrador</p>
   <hr/>

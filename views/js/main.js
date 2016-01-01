@@ -3,7 +3,7 @@ $(document).ready(function() { main(); });
 function main(){
   $('.buscatit').keyup(function(){busca($(this).val(),'.itemtit')});
   $('.buscatit2').keyup(function(){busca($(this).val(),'.itemtit2')});
-
+  $('.col-md-4 , .col-md-6 , .col-md-5').draggable();
 }
 
 function findPos(obj) {

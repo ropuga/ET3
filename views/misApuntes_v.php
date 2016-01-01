@@ -31,8 +31,8 @@
   <br/>
   <p class="text-muted">Nota: le apareceran solo las materias a las que esta matriculado</p>
 </div>
-  <div class="col-sm-2"></div>
-  <div class="col-sm-6">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
     <form action="delApunte.php" method="post">
       <p class="lead banner">Subidos por mi </p>
       <hr/>
