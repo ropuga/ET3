@@ -38,7 +38,7 @@
     <form action="delNota.php" method="post">
       <p class="lead banner">Mis Notas </p>
       <hr/>
-      <input class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
+      <input autocomplete=off class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
       <?php if(empty($notas))echo "<p class='text-center'>Aun no ha creado ninguna nota<p/>"; ?>
     <?php foreach($notas as $nota): ?>
       <div class="itemtit row box">
@@ -56,7 +56,7 @@
     </form>
       <p class="lead banner">Notas compartidas conmigo </p>
       <hr/>
-      <input class="form-control buscatit2" placeholder="Filtrar" type="text" name="name"><br/>
+      <input autocomplete=off class="form-control buscatit2" placeholder="Filtrar" type="text" name="name"><br/>
       <?php if(empty($notasCompartidas))echo "<p class='text-center'>Aun no se ha compartido ninguna nota contigo<p/>"; ?>
     <?php foreach($notasCompartidas as $nota): ?>
       <div class="itemtit2 row box">

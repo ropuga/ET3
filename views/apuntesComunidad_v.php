@@ -35,7 +35,7 @@
       <p class="lead banner">Apuntes de la comunidad </p>
       <hr/>
       <?php if($apuntes!='nil'): ?>
-      <input class="form-control buscatit" placeholder="Buscar" type="text" name="name"><br/>
+      <input autocomplete=off class="form-control buscatit" placeholder="Buscar" type="text" name="name"><br/>
       <?php if(empty($apuntes))echo "<p class='text-center'>No se encontraron apuntes. Cree uno!<p/>"; ?>
     <?php foreach($apuntes as $apunte): ?>
       <div class="box row itemtit">
