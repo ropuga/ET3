@@ -45,9 +45,9 @@
         <div class="autor"> Autor: <?php echo $apunte->nombreAutor(); ?> </div>
         </span>
         <span class="derecha">
-          <a class="btn btn-success" href="../apuntes/<?php echo $apunte->getRuta(); ?>">Abrir</a>
+          <a title="abrir" class="btn btn-success" href="../apuntes/<?php echo $apunte->getRuta(); ?>"><span class="glyphicon glyphicon-eye-open"></a>
           <?php if($logged): ?>
-          <button type="submit" class="btn btn-info" type="submit" name="<?php echo $apunte->getApunte_id(); ?>">Guardar</button>
+          <button type="submit" title="Guardar" class="btn btn-info" type="submit" name="<?php echo $apunte->getApunte_id(); ?>"><span class="glyphicon glyphicon-floppy-disk"></button>
           <?php endif; ?>
         </span>
      </div>

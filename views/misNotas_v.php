@@ -47,8 +47,9 @@
         <span class="fecha"><?php echo $nota->getFecha(); ?></span>
         </span>
         <span class="derecha">
-          <a href="editarNota.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-success">Editar</a>
-          <button type="submit" class="btn btn-danger" type="submit" name="<?php echo $nota->getNota_id(); ?>">Borrar</button>
+          <a title="Editar" href="editarNota.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></a>
+          <a title="compartir" href="compartirNota.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-info"><span class="glyphicon glyphicon-share-alt"></a>
+          <button title="Borrar" type="submit" class="btn btn-danger" type="submit" name="<?php echo $nota->getNota_id(); ?>"><span class="glyphicon glyphicon-trash"></button>
         </span>
      </div>
     <?php endforeach; ?>
@@ -64,7 +65,7 @@
         <span class="fecha"><?php echo $nota->getFecha(); ?></span>
         </span>
         <span class="derecha">
-          <a href="editarNota.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-success">Editar</a>
+          <a title = "Editar" href="editarNota.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></a>
         </span>
      </div>
     <?php endforeach; ?>
