@@ -32,6 +32,7 @@
     $buffer = $date['year']."-".$date['mon']."-".$date['mday'];
     $nota->setFecha($buffer);
     $nota->create();
+    header("location: editarNota.php?nota=".$nota->getNota_id());
   }
   //RENDERIZADO FINAL
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita

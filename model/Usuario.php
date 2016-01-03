@@ -178,5 +178,15 @@ class Usuario{
               Comparte_Nota.nota_id = '".$nota->getNota_id()."'";
     return count($this->driver->exec($query)) > 0;
   }
+  public function notasCompartidas(){
+    $notas = new Nota($this->driver);
+    $query = "select Nota.nota_id, Nota.nota_name, Nota.fecha, Nota.contenido, Nota.user_id
+              from Nota, Comparte_Nota, Usuario where
+              Nota.nota_id = Comparte_Nota.nota_id and
+              Comparte_Nota.user_id = Usuario.user_id and
+              Usuario.user_id = '".$this->getUser_id()."'";
+    $results = $this->driver->exec($query);
+    return $notas->factory($results);
+  }
 }
 ?>

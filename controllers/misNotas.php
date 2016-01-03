@@ -55,6 +55,7 @@
   //RENDERIZADO FINAL
   //primero paso las variables y despues dibujo
   $renderPlantilla->notas = $notas;
+  $renderPlantilla->notasCompartidas = $usuario->notasCompartidas();
   $renderMain->title = "Mis Notas"; //Titulo y cabecera de la pagina
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
   $renderMain->content = $renderPlantilla->render('misNotas_v.php'); //Inserción del contenido de la página
