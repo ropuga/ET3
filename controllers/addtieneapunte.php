@@ -26,5 +26,5 @@
   if($usuario->getUser_id() != $apunte->getUser_id()){
     $utienea->create();
   }
-  //header("location: apuntesComunidad.php");
+  header("location: apuntesComunidad.php");
 ?>

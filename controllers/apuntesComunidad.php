@@ -9,7 +9,7 @@
   require_once 'navbar.php'; //Inclusión de navbar. Omitible si no la necesita
   require_once '../model/Apunte.php';
   require_once '../model/Materia.php';
-  require_once '../model/Titulacion.php';
+  require_once '../model/Usuario.php';
   require_once 'comboboxes.php';
   //Conexion a la BD
   $db = Driver::getInstance();
@@ -17,21 +17,30 @@
   $apunte = new Apunte($db);
   $materias = new Materia($db);
   $titulaciones = new Titulacion($db);
-  $materias = $materias->all();
-  $titulaciones = $titulaciones->all();
+  if(isset($_SESSION['name'])){
+    $usuario = new Usuario($db);
+    $usuario = $usuario->findBy('user_name',$_SESSION['name'])[0];
+    $materias = $usuario->materias();
+  }else{
+    $materias = $materias->all();
+  }
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine();
   $renderPlantilla = new TemplateEngine();
-  $apuntes = $apunte->all();
   $renderPlantilla->titulos = null;
   $renderPlantilla->materias = $materias;
   $renderPlantilla->anho = anhoRenderComboBox();
   //fin Instancias
   //FUNCIONES DEL CONTROLADOR
-  if( isset($_POST['materia']) || isset($_POST['anho']) ){
+
+    if(isset($_POST['materia']) && $_POST['materia']!='nil'){
+      $apuntes = $apunte->findBy('mat_id',$_POST['materia']);
+
+      /*
      if($_POST['materia'] != "nil"){
        $materiafiltro = new Materia($db);
        $materiafiltro = $materiafiltro->findBy('mat_name',$_POST['materia']);
+
        if($materiafiltro){
          $materiafiltro = $materiafiltro[0];
 
@@ -40,7 +49,7 @@
            unset($apuntes[$key]);
          }
       }
-    }}
+    }}*/
     if($_POST['anho'] != "nil"){
       foreach ($apuntes as $key => $apunte) {
         if($apunte->getAnho_academico() != $_POST['anho']){
@@ -48,6 +57,9 @@
         }
      }
     }
+    $renderPlantilla->apuntes = $apuntes;
+  }else{
+    $renderPlantilla->apuntes = 'nil';
   }
   if(isset($_SESSION['name'])){
     $renderPlantilla->logged = true;
@@ -55,7 +67,7 @@
     $renderPlantilla->logged = false;
   }
   //RENDERIZADO FINAL
-  $renderPlantilla->apuntes = $apuntes;
+
   $renderMain->title = "Apuntes de la comunidad"; //Titulo y cabecera de la pagina
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
   $renderMain->content = $renderPlantilla->render('apuntesComunidad_v.php'); //Inserción del contenido de la página

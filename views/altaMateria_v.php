@@ -1,5 +1,5 @@
 
-<div class="col-md-4 col-md-offset-4 col-sm-12  box">
+<div class="col-md-4 col-md-offset-4 col-sm-12">
 <form method= "POST" action="altaMateria.php">
   <div class="banner"><h1>Alta Materia</h1></div>
   <p> Cubra los siguientes campos para dar de alta una materia:</p>

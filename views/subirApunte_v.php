@@ -8,9 +8,17 @@
     <div class="form-group">
       <input name="apunteUploaded" type="file" /><br/>
       <input class="form-control" type="text" name="name" placeholder="Nombre"/><br/>
-      <?php echo $comboboxMateria; ?>
+      <select class="form-control" name="materia">
+        <option value="nil" selected> Seleccione una materia </option>
+        <?php foreach($materias as $materia): ?>
+          <option value="<?php echo $materia->getMat_id(); ?>"><?php echo $materia->getMat_name(); ?> (<?php echo $materia->nombreTitulacion()?>)</option>
+        <?php endforeach; ?>
+      </select><br/>
+
       <?php echo $comboboxAnho; ?>
       <input class="form-control btn btn-success" type="submit" value="Submit">
+      <br/>
+      <p class="text-muted">Nota: le apareceran solo las materias a las que esta matriculado</p>
     </div>
   </form>
 </div>

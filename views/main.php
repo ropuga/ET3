@@ -12,13 +12,11 @@
     <script src="../views/js/main.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../views/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../views/js/jquery-ui.js"></script>
   </head>
   <body>
+  <?php echo $navbar; ?>
     <div class="container">
-      <h1><?php echo $title; ?></h1>
-      <div class="row">
-        <?php echo $navbar; ?>
-      </div>
       <div class="row">
         <?php echo $content; ?>
       </div>

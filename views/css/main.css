@@ -1,13 +1,47 @@
-body{
-  /*background-image: url("../media/wood3.jpg");*/
+bod12y{
+  background-image: url("../media/small_steps.png");
+  background-color: #f4f4f4;
+}
+.logo{
+  font-family: 'custom', serif;
+}
+.containeasdr {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  padding: 40px;
+  background-color: #fff;
+  margin-top: 50px;
+  padding-right: -10px;
+}
+ .logobanner {
+  background-color: #9E9E9E;
+
+ }
+.logomain{
+  color: white;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.navbarColumn  {
+  margin: 10px;
+}
+.logobar{
+  display: block;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.logo{
+  font-size: 30px;
+  margin-right: 50px;
 }
 .box {
   padding: 10px;
   margin: 10px;
   text-align: center;
   border-bottom: 1px solid #eee;
-}
-.elem{
 }
 .derecha{
   float: right;
@@ -29,4 +63,8 @@ body{
 }
 .autor{
   text-align: left;
+}
+@font-face {
+    font-family: custom;
+    src: url("../media/Stonehen.ttf");
 }
