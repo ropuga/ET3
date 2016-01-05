@@ -1,9 +1,9 @@
 <!-- Vista para mis Apuntes por Raul Villar -->
 
 <div class="col-md-4 col-sm-12">
-  <div class="banner"><h1>Filtrar</h1></div>
-  <div>
-    <br>
+  <div class="panel panel-default">
+  <div class="panel-heading">Filtrar</div>
+  <div class="panel-body">
     <form action="apuntesComunidad.php" method="post">
 	<!--<select class="form-control" name="titulacion">
     <option value="nil" selected> Seleccione una titulacion </option>
@@ -20,7 +20,8 @@
 	  <?php echo $anho; ?>
 
 
-  </div>
+
+
   <div>
   <button class="btn btn-info btn-block" type="submit"> Filtrar </button>
   </form>
@@ -29,10 +30,14 @@
   <br/>
   <p class="text-muted">Nota: si es usted un usuario registrado le apareceran solo las materias a las que esta matriculado</p>
 </div>
+</div>
+</div>
   <div class="col-md-2"></div>
   <div class="col-md-6 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Apuntes de la comunidad</div>
+      <div class="panel-body">
     <form action="addtieneapunte.php" method="post">
-      <p class="lead banner">Apuntes de la comunidad </p>
       <hr/>
       <?php if($apuntes!='nil'): ?>
       <input autocomplete=off class="form-control buscatit" placeholder="Buscar" type="text" name="name"><br/>
@@ -57,3 +62,4 @@
   <p class="text-center"> Filtre por alguna materia para empezar </p>
 <?php endif; ?>
   </div>
+</div>
