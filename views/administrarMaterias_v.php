@@ -24,7 +24,10 @@
   <div class="panel panel-default">
     <div class="panel-heading">Usuarios</div>
     <div class="panel-body">
-  <p class="lead"> Todas las materias </p>
+    <div class ="row box">
+        <span class="izquierda lead"> Todas las materias</span>
+        <span class="derecha">  <?php if($admin==1){echo'<a href="administradoresMateria.php" class="btn btn-info btn-block">Gestionar Administradores Materias</a>';}?></span>
+    </div>
   <p> Aqui se muestran todas las materias disponibles. </p>
   <hr/>
 <form action="../controllers/bajaMateria.php" class="header box-main" method="post">

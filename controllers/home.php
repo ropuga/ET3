@@ -17,8 +17,14 @@
   $renderMain = new TemplateEngine();
   $renderHome = new TemplateEngine();
   $renderHome->status = "<br/>"; //Se usa este campo para mostrar mensajes de error o avisos, salto de línea por defecto
+  $renderHome->admin = 0; //Se usa este campo para mostrar mensajes de error o avisos, salto de línea por defecto
 
-  
+  if($db->existUserRol($_SESSION["name"],"AdminApuntorium")){
+      $renderHome->admin=1; //el usuario es administrador
+  }
+
+
+
   //FUNCIONES DEL CONTROLADOR
   //Dibujar la tabla de apuntes más recientes.
   //Dibujar botón de subir apuntes

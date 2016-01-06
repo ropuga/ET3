@@ -10,6 +10,7 @@
   require_once '../model/driver.php'; //Inclusión de Driver de las clases de "model". Omitible si no las usamos
   require_once '../model/Materia.php';
   require_once '../model/Titulacion.php';
+  require_once 'modal.php';
 
   //Conexion a la BD (Permite usar las funciones de DBManager de Cancerbero)
   $db = DBManager::getInstance();
@@ -30,6 +31,9 @@
     $materia->setMat_name($_POST['materia']);
     $materia->setTit_id($_POST['titulo']);
     $materia->create();
+    $titulo =  "Materia creada correctamente";
+    $contenido = "La materia ".$materia->getMat_name()." ha sido creada correctamente";
+    $renderAltaMateria->modal=renderModal($titulo,$contenido);
   }
   //Escribimos aquí lo que hace este controlador en concreto (Comprueba el login, redirecciona...)
 
