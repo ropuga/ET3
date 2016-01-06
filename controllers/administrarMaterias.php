@@ -9,10 +9,13 @@
   require_once '../model/driver.php';
   require_once 'navbar.php'; //Inclusión de navbar. Omitible si no la necesita
   require_once 'comboboxes.php';
+  require_once 'modal.php';
 
 
   //Conexion a la BD
   $db = Driver::getInstance(); // incializa BD
+  $dbm = DBManager::getInstance();
+  $dbm->connect();
 
   //Instancias TemplateEngine, renderizan elementos
   $renderMain = new TemplateEngine(); // inicializa render
@@ -25,6 +28,12 @@
   $allMaterias = $materias->all();// coge todas las materias
   $renderAll->titulos = $titulos->all();// el render coge todas las titulaciones
   $renderPlantilla->titulacion = titulacionRenderComboBox();// el render coge el combobox de titulaciones
+  $renderAll ->modal = null;; // inicializa render
+  $renderAll->admin=0;
+
+  if($dbm->existUserRol($_SESSION["name"],"AdminApuntorium")){
+      $renderAll->admin=1; //el usuario es administrador
+  }
 
 
   if( isset($_POST['titulacion'])){ // si se presiono el boton Filtrar
