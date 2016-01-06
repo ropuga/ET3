@@ -13,4 +13,4 @@ $titulacion = new Titulacion($db);
 //FUNCIONES DEL CONTROLADOR
 $titulacion = $titulacion->findBy('tit_id',$id);
 $titulacion[0]->destroy();
-header("location: misApuntes.php"); //return
+header("location: consultaTitulaciones.php"); //return

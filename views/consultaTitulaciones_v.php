@@ -1,9 +1,8 @@
 <!-- Vista de consultaTitulaciones por Raul Villar Ramos -->
 <div class="col-md-4 col-sm-12">
-  <div class="banner">
-	   <h1>MODO ADMINISTRADOR</h1>
-  </div>
-
+  <div class="panel panel-default">
+    <div class="panel-heading">Crear nueva titulacion</div>
+    <div class="panel-body">
 <div>
   <form action="../controllers/altaTitulacion.php"  method="post">
     <div class="form-group">
@@ -13,9 +12,13 @@
   </form>
 </div>
 </div>
+</div>
+</div>
 
-<div class="col-sm-2"></div>
-<div class="col-sm-6">
+<div class="col-sm-8">
+  <div class="panel panel-default">
+    <div class="panel-heading">Titulaciones</div>
+    <div class="panel-body">
 <form action="deleteTitulacion.php" method="post">
   <p class="lead banner">Titulaciones</p>
   <hr/>
@@ -31,5 +34,6 @@
  </div>
 <?php endforeach; ?>
 </form>
-
+</div>
+</div>
 </div>

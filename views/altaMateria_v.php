@@ -1,10 +1,12 @@
 
 <div class="col-md-4 col-md-offset-4 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Crear nueva materia</div>
+    <div class="panel-body">
 <form method= "POST" action="altaMateria.php">
-  <div class="banner"><h1>Alta Materia</h1></div>
   <p> Cubra los siguientes campos para dar de alta una materia:</p>
 
-  <input class="form-control" type="text" name="materia" size="40" placeholder="Materia"><br/>
+  <input class="form-control" required type="text" name="materia" size="40" placeholder="Materia"><br/>
 
   <select class="form-control" name="titulo">
 
@@ -14,6 +16,8 @@
 
   </select><br/>
 
-  <input class="form-control" type="submit" value="Submit">
+  <input class="btn btn-block btn-success" type="submit" value="Submit">
 </form>
+</div>
+</div>
 </div>

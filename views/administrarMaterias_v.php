@@ -1,8 +1,10 @@
 <!-- Vista para Administrar Materias por Rui Caramés -->
-<br/><br/><br/>
-<div class="col-md-5 col-sm-12">
+<div class="col-md-4 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Filtrar</div>
+    <div class="panel-body">
   <p class="lead"> Filtrar por titulación o materia </p>
-  <p> El primer input filtra por materia. El segundo se debe utilizar el combobox para filtrar portitulacion </p>
+  <p> El primer input filtra por materia. El segundo se debe utilizar el combobox para filtrar por titulacion </p>
     <hr/>
     <input class="form-control buscatit" placeholder="Filtrar por Materia" type="text" name="name"><br/>
     <form action="administrarMaterias.php" method="post">
@@ -13,20 +15,28 @@
 	  <?php endforeach; ?>
 	</select><br/>
   <button class="btn btn-info btn-block" type="submit"> Filtrar </button>
+  <a href="altaMateria.php" class="btn btn-block btn-success">Crear nueva materia</a>
   </form>
 </div>
-<div class="col-md-7 col-sm-12">
+</div>
+</div>
+<div class="col-md-8 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Usuarios</div>
+    <div class="panel-body">
   <p class="lead"> Todas las materias </p>
-  <p> Aqui se muestran todas las materias disponibles. Si no encuentra su materia contacte con un administrador</p>
+  <p> Aqui se muestran todas las materias disponibles. </p>
   <hr/>
 <form action="../controllers/bajaMateria.php" class="header box-main" method="post">
       <?php  foreach ($allMaterias as $key): ?>
         <div class="row box itemtit">
               <span class="izquierda"> <?php echo $key->getMat_name(); ?></span>
               <span> <?php echo $titulos[0]->findBy("tit_id",$key->getTit_id())[0]->getTit_Name();?></span>
-              <span class="derecha" ><button type="submit" class="btn btn-success" name="<?php echo $key->getMat_id(); ?>">Eliminar
+              <span class="derecha" ><button type="submit" class="btn btn-danger" name="<?php echo $key->getMat_id(); ?>">Eliminar
             </button></span>
       </div>
   <?php endforeach; ?>
   </form>
+</div>
+</div>
 </div>

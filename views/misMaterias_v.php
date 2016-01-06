@@ -1,6 +1,8 @@
 <!-- Vista para mis Materias por Daniel de Alonso-->
-<div class="col-md-5 col-sm-12">
-  <p class="lead"> Materias en la que esta matriculado </p>
+<div class="col-md-6 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Materias en las que esta matriculado</div>
+    <div class="panel-body">
   <p> Aqui se muestran las Materias en las que esta actualmente matriculado.
     Puede añadir mas usando haciendo click en el boton o eliminar alguna Materia usando esta tabla</p>
     <hr/>
@@ -14,9 +16,12 @@
   <?php endforeach; ?>
 </form>
 </div>
-<div class="col-md-2"></div>
-<div class="col-md-5 col-sm-12">
-  <p class="lead"> Todas las Materias por titulacion </p>
+</div>
+</div>
+<div class="col-md-6 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Todas las materias por titulación</div>
+    <div class="panel-body">
   <p> se muestran todas las materias de las titulaciones a las que se ha subscrito. Si no se lista ninguna materia tiene que subscribirse a una titulacion en "mis titulaciones"</p>
   <hr/>
   <input autocomplete=off class="form-control buscatit2" placeholder="Filtrar" type="text" name="name"><br/>
@@ -32,4 +37,6 @@
     <?php endforeach; ?>
   <?php endforeach; ?>
 </form>
+</div>
+</div>
 </div>

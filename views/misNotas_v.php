@@ -1,10 +1,9 @@
 <!-- Vista para mis notas por Raul Villar -->
 
 <div class="col-md-4 col-sm-12">
-  <div class="banner"><h1>Mis Notas</h1></div>
-  <div>
-    Filtrar
-    <br>
+  <div class="panel panel-default">
+    <div class="panel-heading">Filtrar</div>
+    <div class="panel-body">
     <form action="misNotas.php" method="post">
 
 	     <?php echo $anho; ?>
@@ -24,21 +23,23 @@
         <option value="11" >Noviembre</option>
         <option value="12" >Diciembre</option>
       </select>
-  </div>
   <div>
     <br/>
     <button class="btn btn-info btn-block" type="submit"> Filtrar </button>
     <a href="nuevaNota.php" class="btn btn-success btn-block">Crear Nueva Nota</a>
     </form>
   </div>
-
 </div>
-  <div class="col-md-2"></div>
-  <div class="col-md-6">
+</div>
+</div>
+
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">Mis notas</div>
+      <div class="panel-body">
     <form action="delNota.php" method="post">
-      <p class="lead banner">Mis Notas </p>
-      <hr/>
       <input autocomplete=off class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
+      <hr/>
       <?php if(empty($notas))echo "<p class='text-center'>Aun no ha creado ninguna nota<p/>"; ?>
     <?php foreach($notas as $nota): ?>
       <div class="itemtit row box">
@@ -53,10 +54,14 @@
         </span>
      </div>
     <?php endforeach; ?>
+    </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Notas compartidas conmigo</div>
+      <div class="panel-body">
     </form>
-      <p class="lead banner">Notas compartidas conmigo </p>
-      <hr/>
       <input autocomplete=off class="form-control buscatit2" placeholder="Filtrar" type="text" name="name"><br/>
+      <hr/>
       <?php if(empty($notasCompartidas))echo "<p class='text-center'>Aun no se ha compartido ninguna nota contigo<p/>"; ?>
     <?php foreach($notasCompartidas as $nota): ?>
       <div class="itemtit2 row box">
@@ -69,5 +74,6 @@
         </span>
      </div>
     <?php endforeach; ?>
-
+  </div>
+</div>
   </div>
