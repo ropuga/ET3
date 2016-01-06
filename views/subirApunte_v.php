@@ -1,5 +1,9 @@
 <!-- plantilla de subir apunte hecha por FVieira  -->
-<div class="col-md-4 col-md-offset-4 col-sm-12">
+<div class="col-md-2"></div>
+<div class="col-md-8 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Subir apunte</div>
+    <div class="panel-body">
 <p class="lead">Solo soportamos apuntes en .pdf</p>
 <p> a continuación cubra los siguientes campos para compartir su apunte </p>
 <p> por favor, lea las <a href="reglas.html">Reglas</a>
@@ -21,5 +25,7 @@
       <p class="text-muted">Nota: le apareceran solo las materias a las que esta matriculado</p>
     </div>
   </form>
+</div>
+</div>
 </div>
 <?php echo $modal; ?>

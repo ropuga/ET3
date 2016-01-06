@@ -1,6 +1,8 @@
 <!-- plantilla de login hecha por FVieira  -->
 <div class="col-md-4 col-md-offset-4 col-sm-12">
-  <div class="banner" >Registro</div><br/>
+  <div class="panel panel-default">
+    <div class="panel-heading">Registro</div>
+    <div class="panel-body">
   <form action="../controllers/registro.php" method="post">
     <div class="form-group">
       <input class="form-control" type="text" name="name" placeholder="Nombre"/><br/>
@@ -11,4 +13,6 @@
   </form>
   <a href='login.php'>Volver</a>
   <?php echo $modal ; ?>
+</div>
+</div>
 </div>

@@ -1,10 +1,9 @@
 <!-- Vista para mis Apuntes por Raul Villar -->
 
 <div class="col-md-4 col-sm-12">
-  <div class="banner"><h1>MIS APUNTES</h1></div>
-  <div>
-    Filtrar
-    <br>
+  <div class="panel panel-default">
+    <div class="panel-heading">Filtrar</div>
+    <div class="panel-body">
     <form action="misApuntes.php" method="post">
 	<!--<select class="form-control" name="titulacion">
     <option value="nil" selected> Seleccione una titulacion </option>
@@ -22,7 +21,6 @@
 	  <?php echo $anho; ?>
 
 
-  </div>
   <div>
   <button class="btn btn-info btn-block" type="submit"> Filtrar </button>
   </form>
@@ -30,13 +28,16 @@
   </div>
   <br/>
   <p class="text-muted">Nota: le apareceran solo las materias a las que esta matriculado</p>
+  </div>
 </div>
-  <div class="col-md-2"></div>
-  <div class="col-md-6">
+</div>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">Apuntes subidos por mi</div>
+      <div class="panel-body">
     <form action="delApunte.php" method="post">
-      <p class="lead banner">Subidos por mi </p>
-      <hr/>
       <input autocomplete=off class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
+      <hr/>
       <?php if(empty($apuntes))echo "<p class='text-center'>Aun no has subido ningun apunte<p/>"; ?>
     <?php foreach($apuntes as $apunte): ?>
       <div class="row box itemtit">
@@ -51,10 +52,14 @@
      </div>
     <?php endforeach; ?>
     </form>
+    </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Apuntes guardados de la comunidad</div>
+      <div class="panel-body">
     <form action="deltieneapunte.php" method="post">
-      <p class="lead banner">Apuntes guradados de la comunidad </p>
-      <hr/>
       <input autocomplete=off class="form-control buscatit2" placeholder="Filtrar" type="text" name="name"><br/>
+      <hr/>
       <?php if(empty($tieneapuntes))echo "<p class='text-center'>Aun no has guardado ningun apunte<p/>"; ?>
     <?php foreach($tieneapuntes as $apunte): ?>
       <div class="row box itemtit2">
@@ -71,3 +76,5 @@
     <?php endforeach; ?>
     </form>
   </div>
+</div>
+</div>

@@ -12,6 +12,9 @@
     </div>
   <br>
   <div class="col-md-5 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Usuarios</div>
+    <div class="panel-body">
   <input class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
   <form action="administradoresMateria.php" method="post">
   <?php foreach($usuarios as $key): ?>
@@ -21,9 +24,13 @@
     </div>
   <?php endforeach; ?>
   </div>
-
+  </div>
+</div>
   <!-- Tabla de Materias -->
   <div class="col-md-5 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Materias</div>
+      <div class="panel-body">
   <input class="form-control buscatit2" placeholder="Filtrar" type="text" name="name"><br/>
   <?php foreach($materias as $key): ?>
       <div class="row box itemtit2">
@@ -34,6 +41,8 @@
   <?php endforeach; ?>
   </table>
   </div>
+</div>
+</div>
   <div class="col-md-2 col-sm-12">
   <button type="submit" class="btn btn-success">Añadir Administrador</button>
   </div>
@@ -43,7 +52,9 @@
 
 <!-- Contenedor de tablas de eliminación -->
 <div id="eliminacion" class="col-md-12 col-sm-12">
-<br><br><br>
+  <div class="panel panel-default">
+    <div class="panel-heading">Permisos</div>
+    <div class="panel-body">
 <div>En la siguiente lista se encuentran los administradores de materia junto a las materias de las que se ocupan.
   Puede eliminar estos permisos mediante el botón pertinente
 </div>
@@ -59,3 +70,6 @@
       </tr>
   <?php endforeach; ?>
 </table>
+</div>
+</div>
+</div>
