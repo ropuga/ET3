@@ -8,7 +8,7 @@
   require_once '../cancerbero/php/DBManager.php'; // se c;arga el driver de cancerbero
   require_once 'navbar.php'; //Inclusión de navbar. Omitible si no la necesita
   require_once '../model/driver.php'; //Inclusión de Driver de las clases de "model". Omitible si no las usamos
-  require_once '../model/Nota.php'
+  require_once '../model/Nota.php';
   require_once 'comboboxes.php';
 
   //Instanciacion de Driver
@@ -28,7 +28,7 @@
   $renderConsultaNota->notas = $notas;
   $renderMain->title = "Consulta Notas"; //Titulo y cabecera de la pagina
   $renderMain->navbar = renderNavBar(); //Inserción de navBar en la pagina. Omitible si no la necesita
-  $renderMain->content = $renderPlantilla->render('consultaNotas_v.php'); //Inserción del contenido de la página
+  $renderMain->content = $renderConsultaNota->render('consultaNotas_v.php'); //Inserción del contenido de la página
 
   echo $renderMain->renderMain(); // Dibujado de la página al completo
 

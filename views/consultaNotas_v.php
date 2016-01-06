@@ -1,26 +1,41 @@
-//HECHO POR MIGUEL OSCAR
+<!--HECHO POR MIGUEL OSCAR-->
 
-<div class="col-md-4 col-md-offset-4 col-sm-12  box">
-  <div class="banner">
-    <h1>Modo Administrador</h1>
-  </div>
-
+<div class="col-md-4 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Filtrar</div>
+    <div class="panel-body">
+    <form action="consultaNotas.php" method="post">
+      <select class="form-control" name="mes">
+        <option value="nil" selected> Seleccione un mes </option>
+        <option value="01" >Enero</option>
+        <option value="02" >Febrero</option>
+        <option value="03" >Marzo</option>
+        <option value="04" >Abril</option>
+        <option value="05" >Mayo</option>
+        <option value="06" >Junio</option>
+        <option value="07" >Julio</option>
+        <option value="08" >Agosto</option>
+        <option value="09" >Septiembre</option>
+        <option value="10" >Octubre</option>
+        <option value="11" >Noviembre</option>
+        <option value="12" >Diciembre</option>
+      </select>
   <div>
-    <form action="aqui iria altaNota"  method="post">
-      <div class="form-group">
-        <input class="form-control" type="text" name="materianueva" placeholder="Nombre de la nueva nota"/><br/>
-        <input class="form-control btn btn-success" type="submit" value="Añadir nueva Nota">
-      </div>
+    <br/>
+    <button class="btn btn-info btn-block" type="submit"> Filtrar </button>
+    <a href="nuevaNota.php" class="btn btn-success btn-block">Crear Nueva Nota</a>
     </form>
   </div>
-  </div>
-
-  <div class="col-sm-2"></div>
-  <div class="col-sm-6">
+</div>
+</div>
+</div>
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">Notas</div>
+      <div class="panel-body">
   <form action="delNota.php" method="post">
-    <p class="lead banner">Notas</p>
-    <hr/>
     <input class="form-control buscatit" placeholder="Filtrar" type="text" name="name"><br/>
+    <hr/>
 
   <?php foreach($notas as $titulo): ?>
     <div class="row box itemtit">
@@ -33,4 +48,6 @@
    </div>
   <?php endforeach; ?>
 </form>
+</div>
+</div>
 </div>
