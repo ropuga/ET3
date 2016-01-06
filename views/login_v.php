@@ -7,7 +7,6 @@
     <div class="form-group">
       <input class="form-control" placeholder="usuario" type="text" name="name"><br/>
       <input class="form-control" type="password" placeholder="contraseña" name="pass">
-      <div class"error"><?php echo $status; ?></div>
       <br/>
       <!-- <div class="centered btn btn-default" onclick="submit()"> Login </div> -->
       <input class="btn btn-success btn-block"type="submit" value="Entrar">
@@ -18,3 +17,4 @@
 </div>
 </div>
 </div>
+<div class"error"><?php echo $status; ?></div>
