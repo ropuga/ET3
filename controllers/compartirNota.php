@@ -48,9 +48,16 @@
       }else{
         $usuarioACompartir = $usuarioACompartir[0];
         $comparte = new Comparte_nota($db);
+        $notificacion = new Notificacion($db);
         $comparte->setNota_id($_GET['nota']);
         $comparte->setUser_id( $usuarioACompartir->getUser_id() );
+        $notificacion->setUser_id($usuarioACompartir->getUser_id());
+        $notificacion->setContenido( $_SESSION['name']. ' ha compartido notas contigo');
+        $date = getdate();
+        $buffer = $date['year']."-".$date['mon']."-".$date['mday'];
+        $notificacion->setFecha($buffer);
         $comparte->save(); //se usa save porque es una tabla sin ids *mire el modelo*
+        $notificacion->save();
         $renderPlantilla->modal = renderModalCorrecto('Nota compartida','Se ha compartido correctamente esta nota');
       }
   }
