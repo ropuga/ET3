@@ -5,6 +5,7 @@
 
   require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
   require_once '../cancerbero/php/DBManager.php'; // se carga el driver de cancerbero
+  require_once 'navbar.php';
   require_once 'modal.php';
   $db = DBManager::getInstance();
   $db->connect();
@@ -22,7 +23,7 @@
     $renderlogin->status = renderModalError($status,$contenido);
   }
   $renderMain->title = "Login";
-  $renderMain->navbar = null; //el login no tiene navbar
+  $renderMain->navbar = renderNavBar(); 
 
   $renderMain->content = $renderlogin->render('login_v.php'); //que inserte en la variable $content de la plantilla main.php el resultado de renderizar login_v.php
   echo $renderMain->renderMain(); //renderiza main y escribe la pagina

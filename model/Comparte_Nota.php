@@ -53,7 +53,7 @@ class Comparte_nota{
  }
 
  /* return an array containing all Comparte_Nota that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Comparte_Nota
@@ -63,7 +63,7 @@ class Comparte_nota{
 }
 
 /* returns an array of Comparte_Nota containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Comparte_Nota';
@@ -85,7 +85,7 @@ class Comparte_nota{
    $this->driver->exec($query);
 }
  public function create() {
-   $query = 'insert into Comparte_Nota (user_id) values ("'.$this->getUser_id().'")';
+   $query = 'insert into Comparte_Nota (nota_id,user_id) values ("'.$this->getNota_id().'","'.$this->getUser_id().'")';
    $this->driver->exec($query);
 }
 

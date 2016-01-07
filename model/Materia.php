@@ -62,7 +62,7 @@ class Materia{
  }
 
  /* return an array containing all Materia that key = value */
- public function findBy($key,$value){ 
+ public function findBy($key,$value){
    $arraytoret = array();
    $query='select *
      from Materia
@@ -72,7 +72,7 @@ class Materia{
 }
 
 /* returns an array of Materia containing all rows from db */
- public function all(){ 
+ public function all(){
    $arraytoret = array();
    $query='select *
      from Materia';
@@ -97,6 +97,12 @@ class Materia{
    $query = 'insert into Materia (mat_name,tit_id) values ("'.$this->getMat_name().'","'.$this->getTit_id().'")';
    $this->driver->exec($query);
 }
-
+public function nombreTitulacion(){
+  $query = 'select Titulacion.tit_name from Titulacion, Materia where
+  Materia.mat_id = "'.$this->getMat_id().'" and
+  Titulacion.tit_id = Materia.tit_id';
+  $result = $this->driver->exec($query);
+  return $result[0]['tit_name'];
+}
 }
 ?>

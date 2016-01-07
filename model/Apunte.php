@@ -127,9 +127,24 @@ class Apunte{
 // funciones custom hechas por fvieira
   public function nombreAutor(){
     $query = 'select * from Usuario where
-              Usuario.user_id = "'.$this->user_id.'"';
+              Usuario.user_id = "'.$this->getUser_id().'"';
     $result = $this->driver->exec($query);
     return $result[0]['user_name'];
+  }
+
+  public function nombreMateria(){
+    $query = 'select * from Materia where
+              Materia.mat_id = "'.$this->getMat_id().'"';
+    $result = $this->driver->exec($query);
+    return $result[0]['mat_name'];
+  }
+
+  public function nombreTitulacion(){
+    $query = 'select Titulacion.tit_name from Titulacion, Materia where
+    Materia.mat_id = "'.$this->getMat_id().'" and
+    Titulacion.tit_id = Materia.tit_id';
+    $result = $this->driver->exec($query);
+    return $result[0]['tit_name'];
   }
 }
 ?>

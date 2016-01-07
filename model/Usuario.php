@@ -4,6 +4,8 @@
 /* Felipe Vieira, 2015 */
 require_once 'Titulacion.php';
 require_once 'Apunte.php';
+require_once 'Materia.php';
+require_once 'Nota.php';
 
 class Usuario{
 
@@ -127,6 +129,17 @@ class Usuario{
     $results = $this->driver->exec($query);
     return $titulacion->factory($results);
   }
+
+  public function materias(){
+    $materia = new Materia($this->driver);
+    $query = "select * from Usuario,Materia,Materia_Usuario where
+              Usuario.user_id = Materia_Usuario.user_id and
+              Materia_Usuario.mat_id = Materia.mat_id and
+              Usuario.user_id = '".$this->user_id."'";
+    $results = $this->driver->exec($query);
+    return $materia->factory($results);
+  }
+
   public function tieneApuntes(){
     $apunte = new Apunte($this->driver);
     $query = "select Apunte.apunte_id,Apunte.mat_id,Apunte.anho_academico,Apunte.apunte_name,Apunte.ruta, Apunte.user_id from Usuario,Apunte,U_Tiene_A where
@@ -144,9 +157,36 @@ class Usuario{
     $results = $this->driver->exec($query);
     return $apunte->factory($results);
   }
+  public function notas(){
+    $nota = new Nota($this->driver);
+    $query = "select * from Usuario,Nota where
+              Usuario.user_id = Nota.user_id and
+              Usuario.user_id = '".$this->user_id."'";
+    $results = $this->driver->exec($query);
+    return $nota->factory($results);
+  }
   public function existeUsuario(){
     $query = 'select * from Usuario where Usuario.user_name ="'.$this->user_name.'"';
     return count($this->driver->exec($query)) > 0;
+  }
+  public function canEditNota($nota){
+    if($this->getUser_id() == $nota->getUser_id()){
+      return true;
+    }
+    $query = "select * from Usuario, Comparte_Nota where
+              Usuario.user_id = Comparte_Nota.user_id and
+              Comparte_Nota.nota_id = '".$nota->getNota_id()."'";
+    return count($this->driver->exec($query)) > 0;
+  }
+  public function notasCompartidas(){
+    $notas = new Nota($this->driver);
+    $query = "select Nota.nota_id, Nota.nota_name, Nota.fecha, Nota.contenido, Nota.user_id
+              from Nota, Comparte_Nota, Usuario where
+              Nota.nota_id = Comparte_Nota.nota_id and
+              Comparte_Nota.user_id = Usuario.user_id and
+              Usuario.user_id = '".$this->getUser_id()."'";
+    $results = $this->driver->exec($query);
+    return $notas->factory($results);
   }
 }
 ?>

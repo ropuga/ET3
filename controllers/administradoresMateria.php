@@ -29,6 +29,7 @@
       $administradores->setUser_id($_POST["usuario"]);
       $administradores->setMat_id($_POST["materia"]);
       $administradores->create();
+      $renderMatAdmin->status = renderModalCorrecto("Operación Exitosa", "Nuevos permisos de administración añadidos correctamente");
     }
     else{
       $status = "El usuario ya admministra esta materia";
@@ -43,6 +44,7 @@
     foreach($administradores as $key){
       if($key->getMat_id()==$eliminar[1]){
         $key->destroy();
+        $renderMatAdmin->status = renderModalCorrecto("Eliminado","Eliminación correcta");
       }
     }
   }

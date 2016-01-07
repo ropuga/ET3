@@ -5,7 +5,8 @@
   require_once '../model/Usuario.php';
 
   session_start();
-  $apunteid = (array_keys($_POST)[0]);
+  $apunteid = (array_keys($_POST)[1]);
+  echo $apunteid;
   $db = Driver::getInstance();
   $apunte = new Apunte($db);
   $apunte = $apunte->findBy('apunte_id',$apunteid)[0];

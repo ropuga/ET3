@@ -4,6 +4,7 @@
   require_once '../model/Usuario.php'; //vamos a registrar un usuario
   require_once '../views/templateEngine.php';
   require_once '../cancerbero/php/DBManager.php';
+  require_once 'navbar.php';
   require_once 'modal.php';
 
   $db = DBManager::getInstance();
@@ -31,7 +32,7 @@
   }
 
   $renderMain->title = "registro";
-  $renderMain->navbar = null; //no existe navbar aun
+  $renderMain->navbar = renderNavBar(); 
   $renderMain->content = $renderRegistro->render('registro_v.php');
   echo $renderMain->renderMain(); //renderiza y muestra al user
 
