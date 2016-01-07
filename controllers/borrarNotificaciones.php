@@ -1,4 +1,5 @@
 <?php
+//Controlador para el borrado de notificaciones por Martín Vázquez
 session_start();
 
 require_once '../views/templateEngine.php'; // se carga la clase TemplateEngine
