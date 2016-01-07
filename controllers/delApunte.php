@@ -19,4 +19,9 @@ $ruta = "../apuntes/".$apunte[0]->getRuta(); //route of the apunte
 
 $apunte[0]->destroy(); // destroy it
 unlink($ruta);  //delete apunte file
-header("location: misApuntes.php"); //return
+if(isset($_GET["mat"])){
+  header("location: adminMateria.php?mat=".$_GET["mat"]."");
+}else{
+  header("location: misApuntes.php"); //return
+}
+?>
