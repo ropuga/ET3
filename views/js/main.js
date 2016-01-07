@@ -26,3 +26,15 @@ function busca(buscador,tipo){
     }
   });
 }
+
+function deleteNotificaciones() {
+      $.ajax({
+           url: 'borrarNotificaciones.php',
+           success:function(html) {deleteALLNotifications(html);}
+
+      });
+ }
+ function deleteALLNotifications(){
+   $('.itemNotificacion').remove();
+   $('#numNotif').html("0");
+ }
