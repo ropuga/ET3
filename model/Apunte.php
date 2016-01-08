@@ -146,5 +146,10 @@ class Apunte{
     $result = $this->driver->exec($query);
     return $result[0]['tit_name'];
   }
+  public function Primeros(){
+    $query = "select * from Apunte limit 10";
+    $result = $this->driver->exec($query);
+    return $this->factory($result);
+  }
 }
 ?>
