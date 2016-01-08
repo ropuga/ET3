@@ -31,7 +31,7 @@
         foreach($displayNotificaciones as $key){
           echo '<li>'.$key.'</li>';
         }
-      echo '<li><a onclick="deleteNotificaciones()" class="btn btn-danger">Limpiar</a></li>
+      echo '<li role="separator" class="divider"></li><li><a onclick="deleteNotificaciones()" class="">Limpiar</a></li>
       </ul>';
     }
     echo '</li>';
