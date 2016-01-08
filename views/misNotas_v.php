@@ -70,7 +70,7 @@
         <span class="fecha"><?php echo $nota->getFecha(); ?></span>
         </span>
         <span class="derecha">
-          <a title = "Editar" href="editarNota.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></a>
+          <a title = "Editar" href="editarNotaAjena.php?nota=<?php echo $nota->getNota_id(); ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></a>
         </span>
      </div>
     <?php endforeach; ?>

@@ -9,7 +9,7 @@ require_once 'navbar.php';
 
 $db = Driver::getInstance();
 
-$id = (array_keys($_POST)[0]); // get the value of clicked button
+$id = (array_keys($_POST)[1]); // get the value of clicked button
 
 //FUNCIONES DEL CONTROLADOR
 $apunte = new Apunte($db);
@@ -19,4 +19,9 @@ $ruta = "../apuntes/".$apunte[0]->getRuta(); //route of the apunte
 
 $apunte[0]->destroy(); // destroy it
 unlink($ruta);  //delete apunte file
-header("location: misApuntes.php"); //return
+if(isset($_GET["mat"])){
+  header("location: adminMateria.php?mat=".$_GET["mat"]."");
+}else{
+  header("location: misApuntes.php"); //return
+}
+?>
